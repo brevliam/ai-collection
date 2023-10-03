@@ -1,0 +1,37 @@
+This file contains the example of input example for testing the endpoints
+
+Endpoint: {host}/fitur-7/predict-workload/
+Method: POST
+Input:
+{
+  "collector_name":"Mykhailo Mudryk",
+  "collector_address":"Jalan Mawar No. 40\nMetro, Jawa Timur 53794",
+  "collector_number":"+62 (097) 530-5219",
+  "collector_nik":6952660116035317,
+  "collector_zip":53794,
+  "collector_rt":1,
+  "collector_rw":9,
+  "collector_birth_place":"DI Yogyakarta, 20-08-1998",
+  "collector_marital_status":"Cerai hidup",
+  "collector_gender":"laki-laki",
+  "collector_id":"C1001",
+  "team_id":"T0201",
+  "success_rate":0.3370757033,
+  "campaigns_count":110,
+  "most_campaign_count":28,
+  "collection_difficulty_score_avg":608.3623727332,
+  "collector_age":32,
+  "weekly_collector_working_hours":50.096235135,
+  "weekly_debtor_volume_handled":13,
+  "weekly_call_contacts_hours":12.3248313882,
+  "weekly_digital_messages_hours":19.5491412667,
+  "weekly_field_action_hours":17.6727666326,
+  "digital_campaigns_count":35,
+  "call_campaigns_count":13,
+  "field_campaigns_count":5,
+  "team_resolution_time_avg":5.7241665016,
+  "team_first_time_resolution_rate":0.3092629799,
+  "team_escalation_rate":0.2751522376,
+  "team_member_cases_total":64,
+  "team_response_time_avg":9.4055413923
+}
