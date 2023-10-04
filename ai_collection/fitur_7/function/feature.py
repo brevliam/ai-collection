@@ -17,6 +17,23 @@ def predict_workload_score(data):
   
   return result
 
+def recommend_campaign(data):
+  model = Fitur7Config.campaign_rec_model
+  DATASET_FILE_NAME = 'workload_opt_v6_231004.csv'
+
+  input_df = transform_input(data)
+  output = model.predict(input_df)
+  result = transform_campaign_rec_output(output, input_df['aging'])
+
+  mod_result = result.copy()
+  mod_result.pop('aging', None)
+
+  utils.append_dataset_with_new_data(DATASET_FILE_NAME, 
+                                     input_df, 
+                                     mod_result)
+
+  return result
+
 def transform_input(data):
   data = {key: [value] for key, value in data.items()}
   df = pd.DataFrame(data)
@@ -42,5 +59,18 @@ def transform_workload_pred_output(pred):
       'workload_score': workload_score,
       'workload_level': workload_level
   }
+
+  return data
+
+def transform_campaign_rec_output(rec, aging):
+  campaign_dict = {0: 'Digital',
+                   1: 'Telepon',
+                   2: 'Field'}
+
+  campaign_rec = campaign_dict.get(int(rec[0]))
+  data = {
+    'campaign_recommendation': campaign_rec, 
+    'aging':aging[0]
+    }
 
   return data

@@ -35,3 +35,46 @@ Input:
   "team_member_cases_total":64,
   "team_response_time_avg":9.4055413923
 }
+
+Endpoint: {host}/fitur-7/recommend-campaign/
+Method: POST
+Input:
+{
+  "debtor_nik":5233673178135086,
+  "debtor_name":"R.A. Yessi Hidayat",
+  "debtor_gender":"perempuan",
+  "debtor_birth_place":"Sulawesi Selatan, 15-01-1987",
+  "debtor_age":36,
+  "debtor_address":"Jalan Dipatiukur No. 553\nPalangkaraya, Nusa Tenggara Timur 47573",
+  "debtor_zip":47573,
+  "debtor_rt":11,
+  "debtor_rw":10,
+  "debtor_marital_status":"Belum menikah",
+  "debtor_occupation":"Profesional",
+  "debtor_company":"CV Kurniawan Wasita",
+  "debtor_number":"+62 (059) 742 6115",
+  "debtor_id":"D0316",
+  "action_code":"INCO",
+  "debtor_location":"Pekanbaru",
+  "debtor_npl_history":111212222212,
+  "aging":"DPK",
+  "collector_name":"Stephen Lee",
+  "collector_address":"Gg. Dr. Djunjunan No. 4\nTarakan, JK 18302",
+  "collector_number":"+62-090-511-3257",
+  "collector_nik":6266983748483711,
+  "collector_zip":18302,
+  "collector_rt":9,
+  "collector_rw":17,
+  "collector_birth_place":"Kalimantan Barat, 30-03-1968",
+  "collector_age":55,
+  "collector_marital_status":"Belum menikah",
+  "collector_gender":"perempuan",
+  "workload_score":525.944086336,
+  "workload_level":"normal",
+  "collector_location":"Makassar",
+  "collector_vehicle":"Punya",
+  "collector_id":"C0160",
+  "debtor_location_coord":"0.5262455:101.4515727",
+  "collector_location_coord":"-5.1342962:119.4124282",
+  "debtor_collector_distance":2082.8220212786
+}
