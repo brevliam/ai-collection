@@ -35,6 +35,15 @@ Input:
   "team_member_cases_total":64,
   "team_response_time_avg":9.4055413923
 }
+Output:
+{
+  "status": 200,
+  "message": "success",
+  "result": {
+    "workload_score": 524.8029049137016,
+    "workload_level": "normal"
+  }
+}
 
 Endpoint: {host}/fitur-7/recommend-campaign/
 Method: POST
@@ -77,4 +86,13 @@ Input:
   "debtor_location_coord":"0.5262455:101.4515727",
   "collector_location_coord":"-5.1342962:119.4124282",
   "debtor_collector_distance":2082.8220212786
+}
+Output:
+{
+  "status": 200,
+  "message": "success",
+  "result": {
+    "campaign_recommendation": "Digital",
+    "aging": "DPK"
+  }
 }
