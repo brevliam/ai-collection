@@ -1,6 +1,6 @@
 from django.urls import path
-from .views import test
+from .views import FraudPrediction
 
 urlpatterns = [
-    path('test/', test, name='test'),
+    path('predict-fraud/', FraudPrediction.as_view(), name='fraud_prediction'),
 ]
