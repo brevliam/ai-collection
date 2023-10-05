@@ -1,6 +1,6 @@
 from django.urls import path
-from .views import predict_difficulty_score
+from .views import PredictDifficultyScore
 
 urlpatterns = [
-    path('predict-difficulty-score/', predict_difficulty_score, name='predict_difficulty_score'),
+    path('predict-difficulty-score/', PredictDifficultyScore.as_view(), name='predict_difficulty_score'),
 ]
