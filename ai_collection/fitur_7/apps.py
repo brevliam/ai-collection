@@ -1,6 +1,7 @@
 from django.apps import AppConfig
 import joblib
 import os
+from .model.field_collector_recommender import FieldCollectorRecommender
 
 class Fitur7Config(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
@@ -17,4 +18,6 @@ class Fitur7Config(AppConfig):
         os.path.dirname(__file__), 
         'model', 
         'campaign_rec_model_v3_231004.joblib')
-    campaign_rec_model = joblib.load(campaign_rec_model_path)    
+    campaign_rec_model = joblib.load(campaign_rec_model_path)
+
+    field_collector_rec_model = FieldCollectorRecommender()

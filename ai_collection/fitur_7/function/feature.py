@@ -34,6 +34,16 @@ def recommend_campaign(data):
 
   return result
 
+def recommend_field_collector(data):
+  model = Fitur7Config.field_collector_rec_model
+  DATASET_FILE_NAME = 'field_collector_opt_v2_230929.csv'
+  dataset_file_path = utils.load_dataset_path(DATASET_FILE_NAME)
+  model.set_collector_dataset(dataset_file_path)
+
+  output = model.recommend(data)
+
+  return output
+
 def transform_input(data):
   data = {key: [value] for key, value in data.items()}
   df = pd.DataFrame(data)
