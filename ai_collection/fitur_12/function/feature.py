@@ -8,7 +8,7 @@ def calculate_monthly_installments(loan_amount, interest_rate, tenor):
 
 def predict_tenor(data):
   model = Fitur12Config.tenor_pred_model
-  DATASET_FILE_NAME = 'Dataset AI Restructure Approval rev7 05102023.csv'
+  DATASET_FILE_NAME = 'Dataset Recommendation Tenor and Monthly Payments 05102023.csv'
 
   mydata=[data]
   input_df = pd.DataFrame(mydata)
@@ -27,12 +27,12 @@ def predict_tenor(data):
     "tenor" : y_pred,
     "monthly_payments" : monthly_installment[0]
   }
-  utils.append_dataset_recommendation_tenor(DATASET_FILE_NAME, input_df, data_append)
+  utils.append_dataset_next_row(DATASET_FILE_NAME, input_df, data_append)
   return dict_response
 
 def predict_loan(data):
   model = Fitur12Config.loan_pred_model
-  DATASET_FILE_NAME = 'Dataset AI Restructure Approval rev7 05102023.csv'
+  DATASET_FILE_NAME = 'Dataset Request Loan 05102023.csv'
 
   mydata=[data]
   input_df = pd.DataFrame(mydata)
@@ -47,7 +47,7 @@ def predict_loan(data):
   data_append = {
     "loan_amount" : y_pred,
   }
-  utils.append_dataset_request_loan(DATASET_FILE_NAME, input_df, data_append)
+  utils.append_dataset_next_row(DATASET_FILE_NAME, input_df, data_append)
   return dict_response
 
 def transform_input(data):

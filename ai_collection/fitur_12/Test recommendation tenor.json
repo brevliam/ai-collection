@@ -10,8 +10,7 @@
     "debtor_marital_status": "Menikah", 
     "debtor_company": "CV Nugroho Melani (Persero) Tbk", 
     "debtor_number": "+62 (102) 776 3467", 
-    "debtor_id": 180034427373791, 
-    "debtor_age": 32, 
+    "debtor_id": 180034427373791, "debtor_age": 32, 
     "debtor_occupation": "Pengusaha", 
     "monthly_income": 50100000, 
     "debt": 7925000.0, 
@@ -27,10 +26,7 @@
     "credit_goals": "Investasi", 
     "collateral": 52600000, 
     "interest_rate": 11.101694915254235, 
-    "tenor": 164, 
-    "number_of_dependents": 0,
-    "old_monthly_payments": 2566954.160246533,
-    "monthly_payments": 516521.2639520463, 
+    "number_of_dependents": 0, 
     "old_tenor": 33, 
     "old_collateral": 32800000, 
     "fee_installments": 100000, 
@@ -40,5 +36,7 @@
     "monthly_income_family": 44200000, 
     "monthly_expense_family": 24700000, 
     "family_health": "Tidak sehat", 
-    "asset_value_family": 38800000
+    "asset_value_family": 38800000, 
+    "old_monthly_payments": 2566954.160246533, 
+    "loan_amount": 76245000.0
 }
