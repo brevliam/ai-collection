@@ -1,6 +1,7 @@
 from django.urls import path
-from .views import test
+from .views import recomendation_tenor, request_loan
 
 urlpatterns = [
-    path('test/', test, name='test'),
+    path('recommendation-tenor/', recomendation_tenor),
+    path('request-loan/', request_loan)
 ]
