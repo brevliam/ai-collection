@@ -14,9 +14,9 @@ def predict_assignment(data):
     # result = transform_workload_pred_output(output)
     output_model = output[0]
     output_df = output
-    # utils.append_dataset_with_new_data_assignment(DATASET_FILE_NAME, input_df, output_df)
+    utils.append_dataset_with_new_data_assignment(DATASET_FILE_NAME, input_df, output_df)
     
-    return output_df
+    return output_model
 
 def predict_campaign(data):
     model = Fitur4Config2.campaign_pred_model
