@@ -1,6 +1,9 @@
-from django.apps import AppConfig
-import joblib
 import os
+
+from django.apps import AppConfig
+
+import joblib
+
 from .model.field_collector_recommender import FieldCollectorRecommender
 
 class Fitur7Config(AppConfig):

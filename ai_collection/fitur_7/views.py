@@ -1,9 +1,11 @@
 from django.shortcuts import render
+
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
 
-from fitur_7.function.feature import predict_workload_score, recommend_campaign, recommend_field_collector
+from fitur_7.function.feature import predict_workload_score, \
+    recommend_campaign, recommend_field_collector
 
 class WorkloadPrediction(APIView):
     def post(self, request, format=None):
