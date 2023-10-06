@@ -27,7 +27,7 @@ class Prediction:
         except Exception as e: 
             return_dict['response']="Exception when prediction: "+str(e)
             return_dict['status']=status.HTTP_500_INTERNAL_SERVER_ERROR
-            return return_dict 
+            return return_dict  
           
 def loss_reverse(data):
   model = Fitur18Config.loss_reverse
@@ -76,7 +76,6 @@ def loss_reverse(data):
 
 
 def transform_input(data):
-  print(type(data))
   data = {key: [value] for key, value in data.items()}
   df = pd.DataFrame(data)
   
