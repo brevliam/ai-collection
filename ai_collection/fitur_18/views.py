@@ -7,7 +7,7 @@ from fitur_18.function.feature import loss_reverse#, credit_risk ,time_to_collec
 
 class loss_reverse(APIView):
     def post(self, request, format=None):
-        try:
+        try: 
             result = loss_reverse(request.data)
             return Response(build_result(result), status = status.HTTP_200_OK)
         except Exception as e:
