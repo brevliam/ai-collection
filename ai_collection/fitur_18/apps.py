@@ -7,15 +7,14 @@ class Fitur18Config(AppConfig):
     name = 'fitur_18'
     # load model
     loss_reverse_path = os.path.join(os.path.dirname(__file__), 'model', 'loss_reverse.joblib')
-    # credit_risk_path = os.path.join(os.path.dirname(__file__), 'model', 'credit_risk.joblib')
-    # time_to_collect_path = os.path.join(os.path.dirname(__file__), 'model', '.joblib')
-    # total_cost_path = os.path.join(os.path.dirname(__file__), 'model', '.joblib')
+    credit_risk_path = os.path.join(os.path.dirname(__file__), 'model', 'credit_risk.joblib')
+    time_to_collect_path = os.path.join(os.path.dirname(__file__), 'model', 'time_to_collect.joblib')
+    total_cost_path = os.path.join(os.path.dirname(__file__), 'model', 'total_cost.joblib')
     
     loss_reverse = joblib.load(loss_reverse_path)
-    print(loss_reverse)
-    # credit_risk = joblib.load(credit_risk_path)
-    # time_to_collect = joblib.load(time_to_collect_path)
-    # total_cost = joblib.load(total_cost_path)
+    credit_risk = joblib.load(credit_risk_path)
+    time_to_collect = joblib.load(time_to_collect_path)
+    total_cost = joblib.load(total_cost_path)
 
 
 

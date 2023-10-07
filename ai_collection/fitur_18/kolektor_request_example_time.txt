@@ -1,0 +1,19 @@
+{
+"collector_name": "Sean Strong,Heather Velez",
+"collector_address": "Gang Indragiri No. 194 Tebingtinggi, NT 48385",
+"collector_number": "+62 (575) 348-4217",
+"collector_nik": "8,40804E+15",
+"collector_zip": 48385,
+"collector_rt": 1,
+"collector_rw": 2,
+"collector_birth_place": "Kepulauan Bangka Belitung, 29-05-1978",
+"collector_age": 45,
+"collector_marital_status": "Menikah",
+"collector_gender": "laki-laki",
+"avg_bill_methods": "sms or WA",
+"debtor_volume_handled": 10,
+"bill_amount_collected": 61600000,
+"total_actual": 67200000,
+"total_cost": 72549,
+"success_rate": 92
+}
