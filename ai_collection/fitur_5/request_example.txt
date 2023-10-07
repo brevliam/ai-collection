@@ -1,0 +1,23 @@
+This file contains the example of input example for testing the endpoints
+
+Endpoint: {host}/fitur-5/predict-best-time-to-bill/
+Method: POST
+Input:
+{
+  "debtor_nik":1234567890987654,
+  "debtor_name":"Ibun Bunaiya",  
+  "debtor_gender": "Laki-Laki",
+  "debtor_birth_place": "Semarang, 15-05-1968",
+  "debtor_age": 55,
+  "debtor_education_level": "S2",
+  "debtor_address": "123 Main Street",
+  "debtor_latitude": 40.7128,
+  "debtor_longitude": -74.0060,
+  "debtor_zip": "12345",
+  "debtor_rt": "3",
+  "debtor_rw": "4",
+  "employment_status": "Full-Time",
+  "debtor_working_day": "Senin-Jumat",
+  "debtor_working_time": "Pagi-Siang",
+  "tenor": 53
+}

@@ -1,6 +1,7 @@
 from django.urls import path
-from .views import test
+from .views import BestTimetoBillPrediction
+# from . import views
 
 urlpatterns = [
-    path('test/', test, name='test'),
+    path('predict-best-time-to-bill/', BestTimetoBillPrediction.as_view(), name='besttimetobill_prediction')
 ]
