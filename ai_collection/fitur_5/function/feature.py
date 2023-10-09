@@ -4,10 +4,12 @@ from ..libraries import utils
 import json
 from sklearn.base import BaseEstimator, TransformerMixin
 from sklearn.pipeline import Pipeline
-from sklearn.preprocessing import StandardScaler, FunctionTransformer
+from sklearn.preprocessing import StandardScaler, MinMaxScaler, FunctionTransformer
+from sklearn.decomposition import PCA
 import math
 import pandas as pd
 import numpy as np
+from datetime import datetime
 
 def predict_best_time_to_bill(data):
     model = Fitur5Config.besttime_to_bill_model
@@ -41,6 +43,27 @@ def predict_recommended_collectors_assignments(data):
     
     return result
 
+def predict_interaction_efficiency(data):
+    model = Fitur5Config.interaction_eficiency_model
+    DATASET_FILE_NAME_INTER = 'collector_performances_v03_231005.csv'
+ 
+    input_df = transform_input_debtor(data)
+    dataset_inter_path = utils.load_dataset_path(DATASET_FILE_NAME_INTER)
+    interactions_df = pd.read_csv(dataset_inter_path)
+
+    preprocessed_input = data_preprocessing_input_inter.fit_transform(input_df).reset_index(drop=True)
+    preprocessed_inter = data_preprocessing_interactions.fit_transform(interactions_df).reset_index(drop=True)
+    preprocessed_input = preprocessed_input.reset_index(drop=True)
+    preprocessed_inter = preprocessed_inter.reset_index(drop=True)
+    combined_df = pd.concat([preprocessed_inter, preprocessed_input], ignore_index=True)
+    pca_df = scale_and_pca.fit_transform(combined_df)
+
+    y_clust = model.predict(pca_df)
+    combined_df["clusters"] = y_clust
+    
+    result = transform_interaction_eficiency_output(combined_df)
+    return result
+
 def transform_input_debtor(data):
     data = {key: [value] for key, value in data.items()}
     df = pd.DataFrame(data)
@@ -66,6 +89,25 @@ def transform_recommended_collectors_output(output, input_debtor_df, dt_collecto
     recommended_collectors = dt_collector.loc[recommended_collectors_index, 'collector_name'].tolist()
     result = {
         'recommended_collectors_to_assign': recommended_collectors
+    }
+
+    return result
+
+def transform_interaction_eficiency_output(combined_df):
+    # takes the output clusters on input data
+    cluster = combined_df['clusters'].iloc[-1]
+    if cluster == 0:
+       cat_cluster = "Efisien dalam Interaksi dengan Pelanggan"
+    elif cluster == 1:
+       cat_cluster = "Efisien dalam Mobilitas/Perjalanan"
+    elif cluster == 2:
+       cat_cluster = "Efisien dalam Manajemen Waktu"
+    elif cluster == 3:
+       cat_cluster = "Efisien dalam Proses Aktifitas"
+    elif cluster == 4:
+       cat_cluster = "Efisien dalam Respon dan Interaksi"
+    result = {
+        'category_cluster': cat_cluster
     }
 
     return result
@@ -229,6 +271,8 @@ class CategoricalEncoder(BaseEstimator, TransformerMixin):
                                   "Siang": 1,
                                   "Sore" : 2,
                                   "Malam": 3},
+            "transportation_type": {"Motor" : 0,
+                                    "Mobil": 1}
         }
 
     def fit(self, X, y=None):
@@ -574,6 +618,34 @@ def scale_for_recsys(dt_debtor, dt_collector):
 
     return xdebt, xcoll
 
+class CalculateDistanceFromCoordinates(BaseEstimator, TransformerMixin):
+    def fit(self, X, y=None):
+        return self
+
+    def transform(self, X):
+        X['distance'] = X.apply(lambda row: calculate_distance(row['collector_latitude'], row['collector_longitude'],
+                                                                  row['debtor_latitude'], row['debtor_longitude']), axis=1)
+
+        X.drop(['collector_latitude', 'collector_longitude', 'debtor_latitude', 'debtor_longitude' ], axis=1, inplace=True)
+        return X
+
+
+class TravelingDurationGenerator(BaseEstimator, TransformerMixin):
+    def fit(self, X, y=None):
+        return self
+
+    def transform(self, X):
+        interactions_df = X[['distance', 'departure_time',
+                            'arrival_time', 'transportation_type', 'call_pickup_duration',
+                            'door_opening_duration', 'connection_time', 'waiting_response_duration',
+                            'idle_duration', 'nonproductive_duration']]
+        fmt = '%H:%M'
+        interactions_df['departure_time'] = interactions_df['departure_time'].apply(lambda x: datetime.strptime(x, fmt))
+        interactions_df['arrival_time'] = interactions_df['arrival_time'].apply(lambda x: datetime.strptime(x, fmt))
+        interactions_df['traveling_duration'] = (interactions_df['arrival_time'] - interactions_df['departure_time']).dt.total_seconds().astype(int)
+
+        interactions_df.drop(['departure_time', 'arrival_time'], axis=1, inplace=True)
+        return interactions_df
 
     
 data_preprocessing_best_time = Pipeline([
@@ -589,4 +661,20 @@ data_preprocessing_debtor = Pipeline([
 data_preprocessing_collector = Pipeline([
     ('object_to_categories', ObjectToCategoriesCollector()),
     ('preprocess_for_recsys', PreprocessCollectorForRecSys())
+])
+
+data_preprocessing_input_inter = Pipeline([
+    ('calculate_distance_from_coordinates', CalculateDistanceFromCoordinates()),
+    ('traveling_duration_generator', TravelingDurationGenerator()),
+    ('categorical_encoder', CategoricalEncoder())
+])
+
+data_preprocessing_interactions = Pipeline([
+    ('traveling_duration_generator', TravelingDurationGenerator()),
+    ('categorical_encoder', CategoricalEncoder())
+])
+
+scale_and_pca = Pipeline([
+    ('min_max_scaler', MinMaxScaler()),
+    ('pca', PCA(n_components=3))
 ])

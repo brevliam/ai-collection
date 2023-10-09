@@ -13,3 +13,6 @@ class Fitur5Config(AppConfig):
 
     recsys_collector_assignments_model_path = os.path.join(os.path.dirname(__file__), 'model', 'model_as.h5')
     recsys_collector_assignments_model = load_model(recsys_collector_assignments_model_path)
+
+    interaction_eficiency_model_path = os.path.join(os.path.dirname(__file__), 'model', 'model_cluster.joblib')
+    interaction_eficiency_model = joblib.load(interaction_eficiency_model_path)

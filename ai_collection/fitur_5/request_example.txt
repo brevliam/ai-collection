@@ -45,3 +45,25 @@ Input:
   "debtor_working_time": "Pagi-Siang",
   "tenor": 53
 }
+
+Predict Interaction Efficiency Cluster
+Endpoint: {host}/fitur-5/predict-interaction-efficiency-cluster/
+Method: POST
+Input:
+{
+  "collector_name": "Josko Gvardiol",
+  "debtor_name": "Jokowi Dodo",
+  "collector_latitude": -6.2570919,
+  "collector_longitude": 106.572494,
+  "debtor_latitude": -6.249463349,
+  "debtor_longitude": 107.17905682,
+  "departure_time": "08:05",
+  "arrival_time": "12:34",
+  "transportation_type": "Mobil",
+  "call_pickup_duration": 18,
+  "door_opening_duration": 32,
+  "connection_time": 35,
+  "waiting_response_duration": 7405,
+  "idle_duration": 1141,
+  "nonproductive_duration": 4850
+}
