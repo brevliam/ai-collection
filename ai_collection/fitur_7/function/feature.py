@@ -18,7 +18,7 @@ def predict_workload_score(data):
   return result
 
 def transform_input(data):
-  data = {key: [value] for key, value in data.items()}
+  data = {key: [value] for key, value in data.object()}
   df = pd.DataFrame(data)
   
   return df

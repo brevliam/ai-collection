@@ -1,0 +1,31 @@
+This file contains the example of input example for testing the endpoints
+
+Endpoint: {host}/fitur-2/debtorlabelage/
+Method: POST
+Input:
+{
+  "collector_ID": 3276024508020006,
+  "collector_gender": "Perempuan",
+  "collector_age": 39,
+  "collector_location": "Jalan Wortel RT 02/ RW 05, Pekanbaru, Riau",
+  "collector_monthly_income": 5500000,
+  "collector_occupation": "Pegawai Negeri",
+  "collector_marital_status": "Belum Menikah",
+  "collector_education_level": "S1",
+  "collector_vehicle": "Motor",
+  "negotiation_skills": "Baik",
+  "proficient_technology_use": "Cukup Baik",
+  "flexible_work": "Kurang Fleksibel",
+  "communication_channel": "SMS",
+  "responsive_rate": 80,
+  "collector_personality": "Tegas",
+  "communication_time": 2023-06-03 10:16:25,
+  "working_time": "Siang-Malam",
+  "debtor_feedback": "Buruk",
+  "year_experience": 8,
+  "experience_level": "Cukup Berpengalaman",
+  "success_rate": 60,
+  "handled_case_category": "Kredit Kendaraan",
+  "handled_case_count": 10,
+  "negotiation_result": "Rencana Pembayaran Alternatif"
+}
