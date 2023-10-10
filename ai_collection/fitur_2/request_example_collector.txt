@@ -1,12 +1,12 @@
 This file contains the example of input example for testing the endpoints
 
-Endpoint: {host}/fitur-2/debtorlabelage/
+Endpoint: {host}/fitur-2/collectorlabel/
 Method: POST
 Input:
 {
   "collector_ID": 3276024508020006,
   "collector_gender": "Perempuan",
-  "collector_age": 39,
+  "collector_age": 30,
   "collector_location": "Jalan Wortel RT 02/ RW 05, Pekanbaru, Riau",
   "collector_monthly_income": 5500000,
   "collector_occupation": "Pegawai Negeri",
@@ -17,15 +17,29 @@ Input:
   "proficient_technology_use": "Cukup Baik",
   "flexible_work": "Kurang Fleksibel",
   "communication_channel": "SMS",
-  "responsive_rate": 80,
+  "responsive_rate": 70,
   "collector_personality": "Tegas",
-  "communication_time": 2023-06-03 10:16:25,
-  "working_time": "Siang-Malam",
-  "debtor_feedback": "Buruk",
-  "year_experience": 8,
+  "working_time": "Pagi-Sore",
+  "debtor_feedback": "Cukup Baik",
+  "year_experience": 5,
   "experience_level": "Cukup Berpengalaman",
   "success_rate": 60,
   "handled_case_category": "Kredit Kendaraan",
   "handled_case_count": 10,
-  "negotiation_result": "Rencana Pembayaran Alternatif"
+  "negotiation_result": "Rencana pembayaran alternatif"
+}
+Output:
+{
+"status": 200,
+"message": "success",
+"result":
+{
+    "age_label": "Muda",
+    "location_label": "Muda",
+    "behavior_label": "Disiplin",
+    "character_label": "Tegas",
+    "collector_field_label": "Meja",
+    "ses_label": "D",
+    "demography_label": "Pemukiman Padat Penduduk"
+  }
 }
