@@ -3,8 +3,7 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
 
-from fitur_18.function.feature import Prediction#, credit_risk ,time_to_collect, total_cost
-
+from fitur_18.function.feature import Prediction
 class loss_reverse(APIView):
     def post(self, request, format=None):
         try: 
