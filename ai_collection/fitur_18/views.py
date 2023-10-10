@@ -9,7 +9,6 @@ class loss_reverse(APIView):
         try: 
             result = Prediction()
             result = result.loss_reverse(request)
-            # result = loss_reverse(request)
             return Response(build_result(result), status = status.HTTP_200_OK)
         except Exception as e:
             error_message = str(e)

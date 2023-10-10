@@ -1,3 +1,6 @@
+Endpoint: /predict-loss-reverse/
+Method: POST
+Input:
 {
 "debtor_name": "Alika Januar",
 "debtor_nik": 4595204238824022,
@@ -48,7 +51,5 @@
 "arrears10": 0,
 "arrears11": 0,
 "arrears12": 0,
-"aging": "Kurang lancar",
-"credit_risk": "Tertagih dengan resiko tinggi",
-"loss_reverse": 40583333.333333336
+"aging": "Kurang lancar"
 }

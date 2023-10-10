@@ -29,7 +29,11 @@ class Prediction:
             input_df["credit_risk"] = prediction2[0]
             X = {"loss_reverse": prediction}
             utils.append_dataset_with_new_data(DATASET_FILE_NAME, input_df, X)
-            return prediction2, prediction
+            predictions = {
+              "credit_risk": prediction2[0],
+              "loss_reverse": prediction
+            }
+            return predictions
 
         except Exception as e: 
             return_dict['response']="Exception when prediction: "+str(e)
@@ -83,39 +87,6 @@ class Prediction:
             return_dict['status']=status.HTTP_500_INTERNAL_SERVER_ERROR
             return return_dict
           
-
-# def credit_risk(data):
-#   model = Fitur18Config.credit_risk
-#   DATASET_FILE_NAME = 'AI_Collection_and_Loss_Reverse_Forecast.csv'
-  
-#   input_df = transform_input(data)
-#   output = model.predict(input_df)
-#   result = output
-#   utils.append_dataset_with_new_data(DATASET_FILE_NAME, input_df, result)
-  
-#   return result
-
-# def time_to_collect(data):
-#   model = Fitur18Config.time_to_collect
-#   DATASET_FILE_NAME = 'AI_Collection_and_Loss_Reverse_Forecast.csv'
-  
-#   input_df = transform_input(data)
-#   output = model.predict(input_df)
-#   result = output
-#   utils.append_dataset_with_new_data(DATASET_FILE_NAME, input_df, result)
-  
-#   return result
-
-# def total_cost(data):
-#   model = Fitur18Config.total_cost
-#   DATASET_FILE_NAME = 'AI_Collection_and_Loss_Reverse_Forecast.csv'
-  
-#   input_df = transform_input(data)
-#   output = model.predict(input_df)
-#   result = output
-#   utils.append_dataset_with_new_data(DATASET_FILE_NAME, input_df, result)
-  
-#   return result
 
 
 
