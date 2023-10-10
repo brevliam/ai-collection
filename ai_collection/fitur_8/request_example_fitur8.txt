@@ -1,0 +1,66 @@
+A. End Point : http://127.0.0.1:8000/fitur-8/predict-CostEffectivenessPrediction/
+   Method : POST
+
+
+B. Input : 
+
+{
+    "debtor_name": 7922460216135313,
+    "CreditScore": 650,
+    "Gender": 0,
+    "debtor_age": 42,
+    "Tenure": 10,
+    "arrear_amount": 5,
+    "loan_amount": 199992480,
+    "debtor_occupation": 4
+}
+
+keterangan Input : 
+
+- debtor name : (sebagai id name peminjam)
+
+
+- CreditScore :  (jumlah kredit peminjam)
+
+
+- Gender (jenis kelamin peminjam)  : (0 : perempuan, 1 : laki - laki)
+
+
+- debtor_age : (umur dari penginput)
+
+
+- Tenure : (jumlah kesempatan peminjam dalam kategori bulan)
+
+
+- arrear_amount : (Jumlah tunggakan yang dilakukan oleh peminjam)
+
+
+- Loan_amount : (Jumlah total uang yang diberikan sebagai pinjaman kepada peminjam)
+
+
+- Deptor_Ocuupation (Pekerjaan peminjam) ketika di masukkan ke dalam inputan : 
+
+  0 = Buruh
+  
+  1 = Pegawai Negeri
+  
+  2 = Pegawai Swasta
+  
+  3 = Professional
+  
+  4 = Pengusaha
+
+
+
+
+C. Output : 
+
+{
+    "status": 200,
+    "message": "success",
+    "result": {
+        "Effecientcosteffectiveness_score": 1,
+        "Effecientcosteffectiveness_label": "NO Efficiency & Effectiveness"
+    }
+}
+
