@@ -1,0 +1,43 @@
+This file contains the example of input example for testing the endpoints
+
+Endpoint: /fitur-3/predict-collection-strategy/
+Method: POST
+Input:
+{
+    "debtor_nik": 5837029610457921,
+    "debtor_name": "Ani Putri",
+    "debtor_gender": "perempuan",
+    "debtor_birth_place": "Jawa Timur, 23-02-1996",
+    "debtor_age": 27,
+    "debtor_address": "Jl. Sudirman No. 5, Surabaya, Jawa Timur 60111",
+    "debtor_zip": 60111,
+    "debtor_rt": 3,
+    "debtor_rw": 6,
+    "debtor_marital_status": "Menikah",
+    "debtor_occupation": "Pegawai Swasta",
+    "debtor_company": "PT Indofood",
+    "debtor_number": "+62 814-6887-1718",
+    "collection_day_type": "Hari kerja",
+    "loan_amount": 35000000,
+    "debtor_education_level": "S-1",
+    "credit_score": 650,
+    "aging": "Dalam Perhatian Khusus",
+    "previous_collection_status": "Berhasil",
+    "previous_payment_status": "Terlambat",
+    "amount_of_late_days": 7,
+    "tenure": 24,
+    "debtor_latitude": -6.947324,
+    "debtor_longitude": 110.688436
+}
+Output:
+{
+    "status": 200,
+  "message": "success",
+  "result": {
+    "best_collection_time": "pagi, malam",
+    "best_collection_method": "Telepon",
+    "best_collector_id": 523,
+    "best_collector_name": "Donna Hoover",
+    "best_collector_distance_to_debtor_in_km": 9.597850484422
+  }
+}
