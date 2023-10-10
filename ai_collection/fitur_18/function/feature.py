@@ -29,7 +29,11 @@ class Prediction:
             input_df["credit_risk"] = prediction2[0]
             X = {"loss_reverse": prediction}
             utils.append_dataset_with_new_data(DATASET_FILE_NAME, input_df, X)
-            return prediction2, prediction
+            predictions = {
+              "credit_risk": prediction2[0],
+              "loss_reverse": prediction
+            }
+            return predictions
 
         except Exception as e: 
             return_dict['response']="Exception when prediction: "+str(e)
