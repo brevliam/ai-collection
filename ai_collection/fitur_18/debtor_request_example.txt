@@ -1,6 +1,6 @@
 Endpoint: /predict-loss-reverse/
 Method: POST
-Input: 
+Input:
 {
 "debtor_name": "Alika Januar",
 "debtor_nik": 4595204238824022,

@@ -1,6 +1,6 @@
 Endpoint: /predict-time-to-collect/
 Method: POST
-Input: 
+Input:
 {
 "collector_name": "Sean Strong,Heather Velez",
 "collector_address": "Gang Indragiri No. 194 Tebingtinggi, NT 48385",
