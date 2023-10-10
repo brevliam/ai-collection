@@ -50,3 +50,12 @@ Input:
 	"travel_frequency":1,
 	"transportation_cost":430102
 }
+Output:
+{
+  "status": 200,
+  "message": "success",
+  "result": {
+    "fraud_score": 166.2346405254836,
+    "fraud_label": "No Fraud"
+  }
+}

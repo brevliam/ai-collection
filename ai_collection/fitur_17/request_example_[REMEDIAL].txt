@@ -50,3 +50,12 @@ Input:
 	"travel_frequency":1,
 	"transportation_cost":430102
 }
+Output:
+{
+  "status": 200,
+  "message": "success",
+  "result": {
+    "remedial_score": 619.3785469289354,
+    "remedial_label": "No remedial"
+  }
+}
