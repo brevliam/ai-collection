@@ -32,12 +32,12 @@ Input:
 Output:
 {
     "status": 200,
-  "message": "success",
-  "result": {
-    "best_collection_time": "pagi, malam",
-    "best_collection_method": "Telepon",
-    "best_collector_id": 523,
-    "best_collector_name": "Donna Hoover",
-    "best_collector_distance_to_debtor_in_km": 9.597850484422
-  }
+    "message": "success",
+    "result": {
+        "best_collection_time": "pagi, malam",
+        "best_collection_method": "Telepon",
+        "best_collector_id": 523,
+        "best_collector_name": "Donna Hoover",
+        "best_collector_distance_to_debtor_in_km": 9.597850484422
+    }
 }
