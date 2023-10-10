@@ -22,6 +22,20 @@ Input:
   "debtor_working_time": "Pagi-Siang",
   "tenor": 53
 }
+Output:
+{
+    "status": 200,
+    "message": "success",
+    "result": {
+        "best_time_to_bill": "Sore",
+        "best_time_to_bill_probability": [
+            "Sore : 60.19%",
+            "Malam : 39.81%",
+            "Pagi : 0.00%",
+            "Siang : 0.00%"
+        ]
+    }
+}
 
 Recommendation collectors for debtor
 Endpoint: {host}/fitur-5/predict-recommendation-collectors/
@@ -45,6 +59,25 @@ Input:
   "debtor_working_time": "Pagi-Siang",
   "tenor": 53
 }
+Output:
+{
+    "status": 200,
+    "message": "success",
+    "result": {
+        "recommended_collectors_to_assign": [
+            "Aaron Smith",
+            "Richard Wade",
+            "Anna Lin",
+            "Isaac Dunn",
+            "Andrew Murray II",
+            "Glenn Little",
+            "Kathy Riggs",
+            "John Lopez",
+            "Andrew Tyler",
+            "Kelly Young"
+        ]
+    }
+}
 
 Predict Interaction Efficiency Cluster
 Endpoint: {host}/fitur-5/predict-interaction-efficiency-cluster/
@@ -66,4 +99,12 @@ Input:
   "waiting_response_duration": 7405,
   "idle_duration": 1141,
   "nonproductive_duration": 4850
+}
+Output:
+{
+    "status": 200,
+    "message": "success",
+    "result": {
+        "category_cluster": "Efisien dalam Respon dan Interaksi"
+    }
 }
