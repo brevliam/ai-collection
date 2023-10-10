@@ -1,3 +1,6 @@
+Endpoint: /fitur-1/predict-difficulty-score/
+Method: POST
+Input:
 {
   "debtor_nik": "3214104104104101",
   "debtor_name": "Merdi",
@@ -48,4 +51,13 @@
   "payment_patterns": "Awal Bulan",
   "payment_method": "ATM",
   "aging": 0
+}
+Output:
+{
+  "status": 200,
+  "message": "success",
+  "result": {
+    "collection_difficulty_score": 311.00460515797107,
+    "collection_difficulty_category": "sedang"
+  }
 }
