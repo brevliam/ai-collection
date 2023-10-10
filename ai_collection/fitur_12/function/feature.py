@@ -14,8 +14,7 @@ def predict_tenor(data):
   input_df = pd.DataFrame(mydata)
   #input_df = transform_input(data)
   y_pred=model.predict(input_df)[0]
-  select_response = ['debtor_name', 'debtor_nik', 'debtor_id',
-					 		'debtor_occupation']
+  select_response = ['debtor_name', 'debtor_nik', 'debtor_id']
   df_response = input_df[select_response]
   monthly_installment = calculate_monthly_installments(input_df['loan_amount'], input_df['interest_rate'], y_pred)
 	# Menambahkan kolom prediksi tenor dan perhitungan pembayaran bulanan untuk output json
@@ -38,8 +37,7 @@ def predict_loan(data):
   input_df = pd.DataFrame(mydata)
   #input_df = transform_input(data)
   y_pred=model.predict(input_df)[0]
-  select_response = ['debtor_name', 'debtor_nik', 'debtor_id',
-					 		'debtor_occupation']
+  select_response = ['debtor_name', 'debtor_nik', 'debtor_id']
   df_response = input_df[select_response]
 	# Menambahkan kolom prediksi tenor dan perhitungan pembayaran bulanan
   df_response = df_response.assign(request_loan=y_pred)
