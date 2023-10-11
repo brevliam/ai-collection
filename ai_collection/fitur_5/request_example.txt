@@ -1,0 +1,110 @@
+This file contains the example of input example for testing the endpoints
+
+Predict Best Time To Bill
+Endpoint: {host}/fitur-5/predict-best-time-to-bill/
+Method: POST
+Input:
+{
+  "debtor_nik":1234567890987654,
+  "debtor_name":"Ibun Bunaiya",  
+  "debtor_gender": "Laki-Laki",
+  "debtor_birth_place": "Semarang, 15-05-1968",
+  "debtor_age": 55,
+  "debtor_education_level": "S2",
+  "debtor_address": "123 Main Street",
+  "debtor_latitude": 40.7128,
+  "debtor_longitude": -74.0060,
+  "debtor_zip": "12345",
+  "debtor_rt": "3",
+  "debtor_rw": "4",
+  "employment_status": "Full-Time",
+  "debtor_working_day": "Senin-Jumat",
+  "debtor_working_time": "Pagi-Siang",
+  "tenor": 53
+}
+Output:
+{
+    "status": 200,
+    "message": "success",
+    "result": {
+        "best_time_to_bill": "Sore",
+        "best_time_to_bill_probability": [
+            "Sore : 60.19%",
+            "Malam : 39.81%",
+            "Pagi : 0.00%",
+            "Siang : 0.00%"
+        ]
+    }
+}
+
+Recommendation collectors for debtor
+Endpoint: {host}/fitur-5/predict-recommendation-collectors/
+Method: POST
+Input:
+{
+  "debtor_nik":1234567890987654,
+  "debtor_name":"Ibun Bunaiya",  
+  "debtor_gender": "Laki-Laki",
+  "debtor_birth_place": "Semarang, 15-05-1968",
+  "debtor_age": 55,
+  "debtor_education_level": "S2",
+  "debtor_address": "123 Main Street",
+  "debtor_latitude": 40.7128,
+  "debtor_longitude": -74.0060,
+  "debtor_zip": "12345",
+  "debtor_rt": "3",
+  "debtor_rw": "4",
+  "employment_status": "Full-Time",
+  "debtor_working_day": "Senin-Jumat",
+  "debtor_working_time": "Pagi-Siang",
+  "tenor": 53
+}
+Output:
+{
+    "status": 200,
+    "message": "success",
+    "result": {
+        "recommended_collectors_to_assign": [
+            "Aaron Smith",
+            "Richard Wade",
+            "Anna Lin",
+            "Isaac Dunn",
+            "Andrew Murray II",
+            "Glenn Little",
+            "Kathy Riggs",
+            "John Lopez",
+            "Andrew Tyler",
+            "Kelly Young"
+        ]
+    }
+}
+
+Predict Interaction Efficiency Cluster
+Endpoint: {host}/fitur-5/predict-interaction-efficiency-cluster/
+Method: POST
+Input:
+{
+  "collector_name": "Josko Gvardiol",
+  "debtor_name": "Jokowi Dodo",
+  "collector_latitude": -6.2570919,
+  "collector_longitude": 106.572494,
+  "debtor_latitude": -6.249463349,
+  "debtor_longitude": 107.17905682,
+  "departure_time": "08:05",
+  "arrival_time": "12:34",
+  "transportation_type": "Mobil",
+  "call_pickup_duration": 18,
+  "door_opening_duration": 32,
+  "connection_time": 35,
+  "waiting_response_duration": 7405,
+  "idle_duration": 1141,
+  "nonproductive_duration": 4850
+}
+Output:
+{
+    "status": 200,
+    "message": "success",
+    "result": {
+        "category_cluster": "Efisien dalam Respon dan Interaksi"
+    }
+}
