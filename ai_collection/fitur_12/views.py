@@ -9,7 +9,6 @@ def recomendation_tenor(request):
 	try:
 		mydata = request.data
 		result = predict_tenor(mydata)
-		print(result)
 		return Response(build_result(result), status = status.HTTP_200_OK)
 	except ValueError as e:
 		return Response(e.args[0], status.HTTP_400_BAD_REQUEST)
@@ -19,7 +18,6 @@ def request_loan(request):
 	try:
 		mydata = request.data
 		result = predict_loan(mydata)
-		print(result)
 		return Response(build_result(result), status = status.HTTP_200_OK)
 	except ValueError as e:
 		return Response(e.args[0], status.HTTP_400_BAD_REQUEST)
