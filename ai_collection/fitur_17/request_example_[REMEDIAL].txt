@@ -1,0 +1,61 @@
+Endpoint: {host}/fitur-17/predict-remedial/
+Method: POST
+Input:
+{
+	"debtor_nik":3285167540917312,
+	"debtor_name":"Harry Maguire",
+	"debtor_gender":"laki-laki",
+	"debtor_birth_place":"Sheffield, 05-03-1993",
+	"debtor_age":53,
+	"debtor_address":"Gang Setiabudhi No. 8\nTangerang, NT 42062",
+	"debtor_zip":42062,
+	"debtor_rt":13,
+	"debtor_rw":4,
+	"debtor_marital_status":"Menikah",
+	"num_of_dependents":2,
+	"debtor_education_level":"S2",
+	"debtor_occupation":"Professional",
+	"debtor_company":"Manchester United F.C.",
+	"debtor_number":"+62 (103) 543 9582",
+	"monthly_income":9812845,
+	"monthly_expense":3785491,
+	"loan_type":"Pinjaman Bisnis",
+	"debtor_tenor":18,
+	"loan_amount":15053912,
+	"payment_history_jan":0,
+	"payment_history_feb":0,
+	"payment_history_mar":1,
+	"payment_history_apr":2,
+	"payment_history_may":1,
+	"payment_history_jun":1,
+	"payment_history_jul":0,
+	"payment_history_aug":1,
+	"payment_history_sep":2,
+	"payment_history_oct":3,
+	"payment_history_nov":2,
+	"payment_history_dec":1,
+	"debtor_aging":"DPK",
+	"transaction_frequency":11,
+	"remaining_loan":1589234,
+	"billing_frequency":1,
+	"billing_type":"Surat",
+	"debtor_response":"Positif",
+	"consumerism_level":"Rendah",
+	"debtor_mode":"Membayar utang",
+	"collector_type":"Komunikasi",
+	"collector_reputation":"Baik",
+	"collector_fee":5493410,
+	"transportation_type":"Mobil",
+	"distance":543,
+	"travel_frequency":1,
+	"transportation_cost":430102
+}
+Output:
+{
+  "status": 200,
+  "message": "success",
+  "result": {
+    "remedial_score": 619.3785469289354,
+    "remedial_label": "No remedial"
+  }
+}
