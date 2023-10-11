@@ -2,7 +2,8 @@ This file contains the example of input example for testing the endpoints
 
 Endpoint: {host}/fitur-12/recommendation-tenor/
 Method: POST
-Input:{
+Input:
+{
     "debtor_nik": 4133431716345918, 
     "debtor_name": "Cemplunk Zulaika", 
     "debtor_gender": "perempuan", 
