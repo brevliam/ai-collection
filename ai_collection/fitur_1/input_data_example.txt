@@ -1,0 +1,63 @@
+Endpoint: /fitur-1/predict-difficulty-score/
+Method: POST
+Input:
+{
+  "debtor_nik": "3214104104104101",
+  "debtor_name": "Merdi",
+  "debtor_gender": "laki-laki",
+  "debtor_birth_place": "Bekasi, 10 September 2001",
+  "debtor_age": 22,
+  "debtor_zip": "17520",
+  "debtor_rt": "01",
+  "debtor_rw": "01",
+  "debtor_address": "Jl. Jend. Cappt No. 14\nBekasi, Jawa Barat 17520",
+  "debtor_number": "+62 (0857) 141 4141",
+  "bulan_1": 0,
+  "bulan_2": 0,
+  "bulan_3": 0,
+  "bulan_4": 0,
+  "bulan_5": 0,
+  "bulan_6": 0,
+  "bulan_7": 0,
+  "bulan_8": 0,
+  "bulan_9": 0,
+  "bulan_10": 0,
+  "bulan_11": 0,
+  "bulan_12": 0,
+  "loan_amount": 44745252,
+  "tenor": 36,
+  "billing_frequency": 27,
+  "transaction_frequency": 6,
+  "interest_rate": 0.19,
+  "other_credit": 0,
+  "monthly_income": 113185750.01,
+  "home_ownership": true,
+  "employment_status": "Employed",
+  "employment_status_duration": 193,
+  "public_records": 0,
+  "contact_frequency": 18,
+  "dti": 0.36,
+  "revolving_credit_balance": 358526673,
+  "occupation": "Chef",
+  "financial_situation": "E",
+  "delay_history": 0,
+  "amount_of_late_days": 1583,
+  "number_of_dependents": 5,
+  "number_of_vehicles": 4,
+  "number_of_complaints": 0,
+  "external_factors": 0,
+  "communication_channel": "Telepon",
+  "working_time": "Pagi-Sore",
+  "payment_patterns": "Awal Bulan",
+  "payment_method": "ATM",
+  "aging": 0
+}
+Output:
+{
+  "status": 200,
+  "message": "success",
+  "result": {
+    "collection_difficulty_score": 311.00460515797107,
+    "collection_difficulty_category": "sedang"
+  }
+}
