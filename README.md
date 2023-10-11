@@ -764,7 +764,7 @@ Pembuatan model memprediksi  proses penanganan pelanggan yang pernah gagal memba
 ```
 
 ### 9.1. Predict Recommended Solution
-- **URL** : `/fitur-9/predict-recomended-solution/kredit-pinjaman/`
+- **URL** : `/fitur-9/predict-recomended-solution/kredit-pinjaman`
 - **Method** : POST
 - **Request Body** :
 ```json
@@ -785,16 +785,22 @@ Pembuatan model memprediksi  proses penanganan pelanggan yang pernah gagal memba
   "loan_amount": 24000000,
   "tenor": 72,
   "monthly_payment": 457463.13,
-  "loan_purpose": "kredit usaha"
+  "loan_purpose": 1
 }
 ```
 - **Example Response** :
 ```json
-
+{
+  "status": 200,
+  "message": "success",
+  "result": {
+    "recommendation": "Berdasarkan analisis kami untuk tujuan peminjaman kredit usaha, kami merekomendasikan jumlah maksimal pinjaman 280000000 dengan cicilan per bulan sebesar 4909307 dan bunga pertahun sebesar 8%."
+  }
+}
 ```
 
 ### 11.1. Predict Default Solution (Kredit Pinjaman)
-- **URL** : `/fitur-11/predict-default-solution/kredit-pinjaman/`
+- **URL** : `/fitur-11/predict-default-solution/kredit-pinjaman`
 - **Method** : POST
 - **Request Body** :
 ```json
@@ -832,11 +838,19 @@ Pembuatan model memprediksi  proses penanganan pelanggan yang pernah gagal memba
 ```
 - **Example Response** :
 ```json
-
+{
+  "status": 200,
+  "message": "success",
+  "result": {
+    "default_score": 150,
+    "default_potential": "Baik",
+    "solution": "Cairkan aset untuk menutupi pinjaman, Penyusunan anggaran untuk kebutuhan mendesak, Edukasi Keuangan Lanjutan"
+  }
+}
 ```
 
 ### 11.2. Predict Default Solution (Kredit Benda)
-- **URL** : `/fitur-11/predict-default-solution/kredit-benda/`
+- **URL** : `/fitur-11/predict-default-solution/kredit-benda`
 - **Method** : POST
 - **Request Body** :
 ```json
@@ -876,7 +890,15 @@ Pembuatan model memprediksi  proses penanganan pelanggan yang pernah gagal memba
 ```
 - **Example Response** :
 ```json
-
+{
+  "status": 200,
+  "message": "success",
+  "result": {
+    "default_score": 147,
+    "default_potential": "Baik",
+    "solution": "Berikan edukasi keuangan, Cairkan aset untuk menutupi pinjaman, Penjualan kendaraan bermotor"
+  }
+}
 ```
 
 ### 12.1. Predict Recommendation Tenor
