@@ -1086,7 +1086,7 @@ Pembuatan model memprediksi  proses penanganan pelanggan yang pernah gagal memba
 ```
 
 ### 18.1. Predict Loss Reverse
-- **URL** : `/fitur-18//predict-loss-reverse/`
+- **URL** : `/fitur-18/predict-loss-reverse/`
 - **Method** : POST
 - **Request Body** :
 ```json
@@ -1145,7 +1145,14 @@ Pembuatan model memprediksi  proses penanganan pelanggan yang pernah gagal memba
 ```
 - **Example Response** :
 ```json
-
+{
+  "status": 200,
+  "message": "success",
+  "result": {
+    "credit_risk": "Tertagih dengan resiko tinggi",
+    "loss_reverse": 40600000
+  }
+}
 ```
 
 ## Contributors
