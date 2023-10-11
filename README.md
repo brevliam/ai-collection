@@ -352,7 +352,7 @@ Pembuatan model memprediksi  proses penanganan pelanggan yang pernah gagal memba
 }
 ```
 
-### 4.1. Predict Assignment
+### 4.1. Predict Campaign
 - **URL** : `/fitur-4/predict-assignment/`
 - **Method** : POST
 - **Request Body** :
@@ -402,7 +402,7 @@ Pembuatan model memprediksi  proses penanganan pelanggan yang pernah gagal memba
 }
 ```
 
-### 4.2. Predict Campaign
+### 4.2. Predict Assignment
 - **URL** : `/fitur-4/predict-campaign/`
 - **Method** : POST
 - **Request Body** :
