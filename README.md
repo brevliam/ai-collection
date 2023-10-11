@@ -216,7 +216,7 @@ Pembuatan model memprediksi  proses penanganan pelanggan yang pernah gagal memba
   "responsive_rate": 70,
   "collector_personality": "Tegas",
   "working_time": "Pagi-Sore",
-  "debtor_feedback": "Cukup Baik",
+  "debtor_feedback": "Cukup",
   "year_experience": 5,
   "experience_level": "Cukup Berpengalaman",
   "success_rate": 60,
