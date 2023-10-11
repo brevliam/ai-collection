@@ -38,5 +38,16 @@ Input:
             "action_code": "WRPH",
             "category_campaign": "Call"}
 
+Output campaign prediction:
+{
+  "status": 200,
+  "message": "success",
+  "result": "Lakukan Telfon"
+}
 
-
+output assignment prediction:
+{
+  "status": 200,
+  "message": "success",
+  "result": "Danielle Hamilton"
+}
