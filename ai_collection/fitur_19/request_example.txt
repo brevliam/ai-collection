@@ -1,0 +1,22 @@
+This file contains the example of input example for testing the endpoints
+
+Endpoint: {host}/fitur-19/predict-default-payment/
+Method: POST
+Input:
+{ "debtor_nik":7003775670821758,
+  "payment_history_1":0,
+  "payment_history_2":1,
+  "payment_history_3":1,
+  "payment_history_4":0,
+  "payment_history_5":0,
+  "payment_history_6":0,
+  "payment_history_7":0,
+  "payment_history_8":0,
+  "payment_history_9":0,
+  "payment_history_10":0,
+  "payment_history_11":0,
+  "payment_history_12":1,
+  "limit_ball":12387114,
+  "bill_amount":6258085,
+  "payment_amount":5946019
+}
