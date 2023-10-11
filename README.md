@@ -495,7 +495,7 @@ Pembuatan model memprediksi  proses penanganan pelanggan yang pernah gagal memba
 ```
 
 ### 5.2. Predict Recommendation Collectors for Debtor
-- **URL** : `/fitur-5/predict-recommendation-collectors/`
+- **URL** : `/fitur-5/predict-recommended-collectors-assignments/`
 - **Method** : POST
 - **Request Body** :
 ```json
