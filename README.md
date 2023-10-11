@@ -64,7 +64,7 @@ Pembuatan Model Identifikasi dari setiap kolektor, Pola  Penagihan yang efektif 
 **Definition:**  
 Pembuatan Model Mengefisienkan Strategi  Penagihan, Melalui rekomendasi cara menagih untuk setiap akun pelanggan dan profil cluster  pelanggan, dengan menggunakan data perilaku, Transaksi, nilai scoring dan data profiling yang  ada.
 
-### Fitur 4: [AI Inventory Assignment Optimization and Campaign Management](#41-predict-assignment)
+### Fitur 4: [AI Inventory Assignment Optimization and Campaign Management](#41-predict-campaign)
 > **PIC**: Muhammad Othman Lutfi  
 **Definition:**  
 Pembuatan Model  Mengefisienkan penagihan melalui pengoptimalan penugasan akun ke kolektor tertentu, dan  mengikutsertakannya ke program penagihan khusus yang paling cocok (collection campaign).
