@@ -1,0 +1,22 @@
+Endpoint: {host}/predict-recomended-solution/kredit-pinjaman
+Method: POST
+Input :
+{
+    "debtor_name": "Maya Aulia",
+    "debtor_gender": "perempuan",
+    "debtor_birth_place": "Jawa Tengah, 13-04-1964",
+    "debtor_age": 24,
+    "debtor_marital_status": "Menikah",
+    "debtor_number_of_dependents": 0,
+    "debtor_education_level": "S2",
+    "employment_year": 5,
+    "monthly_income": 5500000,
+    "monthly_expenses": 3400000,
+    "asset_value": 270000000,
+    "down_payment_percentage": 0.2,
+    "paid_down_payment": 6000000,
+    "loan_amount": 24000000,
+    "tenor": 72,
+    "monthly_payment": 457463.13,
+    "loan_purpose": "kredit usaha"
+}
