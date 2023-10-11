@@ -1,0 +1,76 @@
+This file contains the example of input example for testing the endpoints
+
+Endpoint: {host}/fitur-11/predict-default-solution/kredit-pinjaman
+Method: POST
+Input :
+{
+    "debtor_nik": "4133424516345914",
+    "debtor_name": "Muh. Dzaky",
+    "debtor_gender": "laki-laki",
+    "debtor_birth_place": "Bengkulu, 23-09-1997",
+    "debtor_age": 40,
+    "debtor_address": "Jalan Raya Setiabudhi No. 857\nBanjarbaru, KR ...",
+    "debtor_zip": 12188,
+    "debtor_rt": 6,
+    "debtor_rw": 10,
+    "debtor_marital_status": "Menikah",
+    "debtor_occupation": "Pengusaha",
+    "debtor_company": "CV Nugroho Melani (Persero) Tbk",
+    "debtor_number": "+62 (102) 776 3467",
+    "debtor_number_of_dependents": 5,
+    "debtor_education_level": "SMA",
+    "employment_year": 18,
+    "residential_zone": "Zona 9: zona daerah industri sub urban",
+    "criminality_level": "Tingkat Kriminalitas Tinggi",
+    "violence_level": "Tingkat Kekerasan Sedang",
+    "gangster_culture": "Sedang",
+    "monthly_income": 6000000,
+    "monthly_expenses": 2900000,
+    "asset_value": 290000000.0,
+    "collateral_offered": "Yes",
+    "loan_amount": 37100000,
+    "interest_rate": 12,
+    "tenor": 60,
+    "monthly_payment": 825269.01,
+    "loan_purpose": "Kebutuhan darurat"
+}
+
+
+
+
+Endpoint: {host}/fitur-11/predict-default-solution/kredit-benda
+Method: POST
+Input :
+{
+    "debtor_nik": "7834621118366601",
+    "debtor_name": "Maya Aulia ",
+    "debtor_gender": "perempuan",
+    "debtor_birth_place": "Jawa Tengah, 13-04-1964",
+    "debtor_age": 24,
+    "debtor_address": "Jalan Cihampelas No. 4\nPekanbaru, Sulawesi Selatan",
+    "debtor_zip": "56126",
+    "debtor_rt": 20,
+    "debtor_rw": 20,
+    "debtor_marital_status": "Menikah",
+    "debtor_occupation": "Pengusaha",
+    "debtor_company": "UD Hidayat",
+    "debtor_number": "+62 (808) 299 5117",
+    "debtor_number_of_dependents": 0,
+    "debtor_education_level": "S2",
+    "employment_year": 5,
+    "residential_zone": "Zona 4: zona permukiman kelas menengah",
+    "criminality_level": "Tingkat Kriminalitas Sedang",
+    "violence_level": "Tingkat Kekerasan Tinggi",
+    "gangster_culture": "Rendah",
+    "monthly_income": 5500000,
+    "monthly_expenses": 3400000,
+    "asset_value": 270000000.0,
+    "down_payment_percentage": 0.2,
+    "paid_down_payment": 6000000,
+    "loan_amount": 24000000,
+    "interest_rate": 6,
+    "tenor": 60,
+    "monthly_payment": 457463.13,
+    "ltv": 75.0,
+    "loan_purpose": "kendaraan bermotor"
+}

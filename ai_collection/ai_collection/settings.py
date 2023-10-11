@@ -43,7 +43,7 @@ INSTALLED_APPS = [
     'fitur_4',
     'fitur_5',
     'fitur_6',
-    'fitur_7',
+    # 'fitur_7',
     'fitur_8',
     'fitur_9',
     'fitur_10',

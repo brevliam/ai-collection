@@ -1,6 +1,6 @@
 from django.urls import path
-from .views import test
-
+from .views import CostEffectivenessPrediction
 urlpatterns = [
-    path('test/', test, name='test'),
+    path('predict-CostEffectivenessPrediction/', CostEffectivenessPrediction.as_view(), name='CostEffectiveness_Prediction'),
 ]
+

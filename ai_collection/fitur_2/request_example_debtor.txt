@@ -1,0 +1,60 @@
+This file contains the example of input example for testing the endpoints
+
+Endpoint: {host}/fitur-2/debtorlabel/
+Method: POST
+Input:
+{
+  "debtor_age":"25",
+  "debtor_gender":"Perempuan",
+  "debtor_nik":"3276024508020006",
+  "debtor_address": "Jalan Kapitan Raya RT 08/ RW 01, Sukatani, Tapos, Depok, Jawa Barat",
+  "debtor_marital_status": "Belum Menikah",
+  "debtor_number_of_dependents": 1,
+  "debtor_education_level": "SMA",
+  "debtor_occupation": "Pegawai Negeri",
+  "debtor_monthly_income": 5000000,
+  "debtor_monthly_expense": 3000000, 
+  "debtor_asset_ownership": "Tidak",
+  "debtor_communication_channel": "Telepon",
+  "risk_credit": "Baik",
+  "payment_pattern": "Pembayaran Tepat Waktu",
+  "payment_method": "ATM",
+  "tenor": 12,
+  "interest_rate": 0.1,
+  "monthly_payment": 7400000,
+  "loan_amount": 20000000,
+  "loan_type": "Pinjaman Pribadi",
+  "working_time": "Pagi-Sore",
+  "debtor_personality": "Ramah",
+  "history_jan": 0,
+  "history_feb": 1,
+  "history_mar": 0,
+  "history_apr": 0,
+  "history_may": 1,
+  "history_jun": 1,
+  "history_jul": 0,
+  "history_aug": 2,
+  "history_sep": 1,
+  "history_oct": 3,
+  "history_nov": 1,
+  "history_dec": 0,
+  "debtor_aging": "DPK",
+  "transaction": 8,
+  "remaining_loan":7400000,
+  "billing_type": "Telepon"
+}
+Output:
+{
+"status": 200,
+"message": "success",
+"result":
+{
+    "age_label": "Muda",
+    "location_label": "Jawa",
+    "behavior_label": "Disiplin",
+    "character_label": "Bijaksana",
+    "collector_field_label": "Melalui Meja",
+    "ses_label": "C",
+    "demography_label": "Rusun"
+  }
+}
