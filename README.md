@@ -1154,6 +1154,73 @@ Pembuatan model memprediksi  proses penanganan pelanggan yang pernah gagal memba
   }
 }
 ```
+### 18.2. Predict Time to Collect for Collector
+- **URL** : `/predict-time-to-collect/`
+- **Method** : POST
+- **Request Body** :
+```json
+{
+"collector_name": "Sean Strong,Heather Velez",
+"collector_address": "Gang Indragiri No. 194 Tebingtinggi, NT 48385",
+"collector_number": "+62 (575) 348-4217",
+"collector_nik": "8,40804E+15",
+"collector_zip": 48385,
+"collector_rt": 1,
+"collector_rw": 2,
+"collector_birth_place": "Kepulauan Bangka Belitung, 29-05-1978",
+"collector_age": 45,
+"collector_marital_status": "Menikah",
+"collector_gender": "laki-laki",
+"avg_bill_methods": "sms or WA",
+"debtor_volume_handled": 10,
+"bill_amount_collected": 61600000,
+"total_actual": 67200000,
+"total_cost": 72549,
+"success_rate": 92
+}
+```
+- **Example Response** :
+```json
+{
+    "status": 200,
+    "message": "success",
+    "result": 1
+}
+```
+### 18.3. Predict Total Cost for Collector
+- **URL** : `/predict-total-cost/`
+- **Method** : POST
+- **Request Body** :
+```json
+{
+"collector_name": "Sean Strong,Heather Velez",
+"collector_address": "Gang Indragiri No. 194 Tebingtinggi, NT 48385",
+"collector_number": "+62 (575) 348-4217",
+"collector_nik": "8,40804E+15",
+"collector_zip": 48385,
+"collector_rt": 1,
+"collector_rw": 2,
+"collector_birth_place": "Kepulauan Bangka Belitung, 29-05-1978",
+"collector_age": 45,
+"collector_marital_status": "Menikah",
+"collector_gender": "laki-laki",
+"avg_bill_methods": "sms or WA",
+"debtor_volume_handled": 10,
+"bill_amount_collected": 61600000,
+"total_actual": 67200000,
+"success_rate": 92,
+"time_to_collect": 3
+}
+
+```
+- **Example Response** :
+```json
+{
+    "status": 200,
+    "message": "success",
+    "result": 91050
+}
+```
 
 ## Contributors
 A big shout-out and thanks to the amazing individuals who have contributed to this project:
