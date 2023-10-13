@@ -18,5 +18,5 @@ Input :
     "loan_amount": 24000000,
     "tenor": 72,
     "monthly_payment": 457463.13,
-    "loan_purpose": "kredit usaha"
+    "loan_purpose": 1
 }
