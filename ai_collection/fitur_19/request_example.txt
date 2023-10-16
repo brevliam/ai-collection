@@ -3,7 +3,8 @@ This file contains the example of input example for testing the endpoints
 Endpoint: {host}/fitur-19/predict-default-payment/
 Method: POST
 Input:
-{ "debtor_nik":7003775670821758,
+{
+  "debtor_nik":7003775670821758,
   "payment_history_1":0,
   "payment_history_2":1,
   "payment_history_3":1,
@@ -19,4 +20,43 @@ Input:
   "limit_ball":12387114,
   "bill_amount":6258085,
   "payment_amount":5946019
+}
+Output:
+{
+  "status": 200,
+  "message": "success",
+  "result": {
+    "default_payment_next_month": "Not Default"
+  }
+}
+
+Endpoint: {host}/fitur-19/recommended-supervision/
+Method: POST
+Input:
+{
+  "debtor_nik":1234567890987654,
+  "debtor_name":"Ibun Bunaiya",
+  "debtor_number":88296495531,
+  "debtor_gender": "Laki-Laki",
+  "debtor_company": "CV Carter",
+  "debtor_education_level": "S2",
+  "debtor_address": "123 Main Street",
+  "debtor_marital_status": "Menikah",
+  "debtor_personality": "kalem",
+  "debtor_location": "Tangerang",
+  "action_code": "ATPU"
+}
+Output:
+{
+  "status": 200,
+  "message": "success",
+  "result": {
+    "recommended_collectors_to_monitor": [
+      "Theresa Ford",
+      "Victoria Garcia",
+      "Stacey Garcia",
+      "Elizabeth Smith",
+      "Holly Proctor MD"
+    ]
+  }
 }

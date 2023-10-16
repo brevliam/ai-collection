@@ -1329,7 +1329,7 @@ python manage.py runserver
 
 ### 18.2. Predict Time to Collect for Collector
 
-- **URL** : `/predict-time-to-collect/`
+- **URL** : `/fitur-18/predict-time-to-collect/`
 - **Method** : POST
 - **Request Body** :
 
@@ -1367,7 +1367,7 @@ python manage.py runserver
 
 ### 18.3. Predict Total Cost for Collector
 
-- **URL** : `/predict-total-cost/`
+- **URL** : `/fitur-18/predict-total-cost/`
 - **Method** : POST
 - **Request Body** :
 
@@ -1400,6 +1400,85 @@ python manage.py runserver
   "status": 200,
   "message": "success",
   "result": 91050
+}
+```
+
+### 19.1. Predict Default Payment
+
+- **URL** : `/fitur-19/predict-default-payment/`
+- **Method** : POST
+- **Request Body** :
+
+```json
+{
+  "debtor_nik": 7003775670821758,
+  "payment_history_1": 0,
+  "payment_history_2": 1,
+  "payment_history_3": 1,
+  "payment_history_4": 0,
+  "payment_history_5": 0,
+  "payment_history_6": 0,
+  "payment_history_7": 0,
+  "payment_history_8": 0,
+  "payment_history_9": 0,
+  "payment_history_10": 0,
+  "payment_history_11": 0,
+  "payment_history_12": 1,
+  "limit_ball": 12387114,
+  "bill_amount": 6258085,
+  "payment_amount": 5946019
+}
+```
+
+- **Example Response** :
+
+```json
+{
+  "status": 200,
+  "message": "success",
+  "result": {
+    "default_payment_next_month": "Not Default"
+  }
+}
+```
+
+### 19.2. Predict Default Payment
+
+- **URL** : `/fitur-19/recommended-supervision/`
+- **Method** : POST
+- **Request Body** :
+
+```json
+{
+  "debtor_nik": 1234567890987654,
+  "debtor_name": "Ibun Bunaiya",
+  "debtor_number": 88296495531,
+  "debtor_gender": "Laki-Laki",
+  "debtor_company": "CV Carter",
+  "debtor_education_level": "S2",
+  "debtor_address": "123 Main Street",
+  "debtor_marital_status": "Menikah",
+  "debtor_personality": "kalem",
+  "debtor_location": "Tangerang",
+  "action_code": "ATPU"
+}
+```
+
+- **Example Response** :
+
+```json
+{
+  "status": 200,
+  "message": "success",
+  "result": {
+    "recommended_collectors_to_monitor": [
+      "Theresa Ford",
+      "Victoria Garcia",
+      "Stacey Garcia",
+      "Elizabeth Smith",
+      "Holly Proctor MD"
+    ]
+  }
 }
 ```
 
