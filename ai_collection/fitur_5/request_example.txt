@@ -38,7 +38,7 @@ Output:
 }
 
 Recommendation collectors for debtor
-Endpoint: {host}/fitur-5/predict-recommendation-collectors/
+Endpoint: {host}/fitur-5/predict-recommended-collectors-assignments/
 Method: POST
 Input:
 {
