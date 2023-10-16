@@ -139,7 +139,7 @@ python manage.py runserver
 > **Definition:**  
 > Pembuatan Model Memprediksi tagihan yang tidak tertagih dan kerugian yang terjadi dalam portofolio tagihan perusahaan, termasuk kemungkinan biaya yang akan terjadi dan kinerja tim penagihan, serta perkiraannya untuk 3-12 bulan kedepan.
 
-### Fitur 19: AI Collection Rehabilitation
+### Fitur 19: [AI Collection Rehabilitation](#191-predict-default-payment)
 
 > **PIC**: Lusi Yustika Rachman  
 > **Definition:**  
@@ -1442,7 +1442,7 @@ python manage.py runserver
 }
 ```
 
-### 19.2. Predict Default Payment
+### 19.2. Recommended Supervision
 
 - **URL** : `/fitur-19/recommended-supervision/`
 - **Method** : POST
