@@ -1,6 +1,7 @@
 # AI Collection Tools
 
 ## Project Overview
+
 Welcome to AI Collection, a groundbreaking project meticulously developed by the AI Programmer & Data Science Division of M-Knows Consulting. This initiative offers a comprehensive suite of cutting-edge AI tools tailored to enhance the efficiency and effectiveness of Collector Departments and Agencies.
 
 Our mission is to revolutionize the way Collector Departments operate by providing a powerful arsenal of AI-driven solutions. These tools have been meticulously designed to optimize processes, streamline workflows, and empower collectors with the intelligence and automation necessary to excel in their roles.
@@ -27,7 +28,7 @@ cd ai-collection
 # Create a virtual environment (optional but recommended)
 python -m venv venv
 
-# Activate the virtual environment
+# Activate the virtual environmentV
 venv\Scripts\activate
 
 # Install the project dependencies
@@ -36,11 +37,15 @@ pip install -r requirements.txt
 # Navigate to the project directory
 cd ai_collection
 
+# WARNING!! "Please note that before running the server, you should first download the required models and put them into the appropriate model directories from the provided Google Drive links."
+https://drive.google.com/drive/folders/1c07LcLcwFNOGSFO07FIPfQLO9-6eRQl0?usp=drive_link
+
 # Start the development server
 python manage.py runserver
 ```
 
 ## Project Structure
+
 - `ai_collection/` : Django project directory
 - `fitur-[x]/` : Dedicated Django app directories for each feature or tool (x represents the feature's serial number).
 - `fitur_[x]/dataset/` : A repository for storing datasets used in the development of the respective feature.
@@ -49,86 +54,105 @@ python manage.py runserver
 - `fitur_[x]/libraries/` : A directory designed for the utils.py module, encompassing methods for appending new data to the dataset.
 
 ## Features
+
 ### Fitur 1: [AI Collection Difficulty Scoring](#11-predict-collection-difficulty-score)
+
 > **PIC**: Roni Merdiansah  
-**Definition:**  
-Pembuatan Model Memprediksi Tingkat Kesulitan Penagihan untuk setiap profil customer, serta merekomendasikan cara penagihan yang efektif  (Clustering, Classification) untuk setiap Profil Pelanggan sehingga mengoptimalkan kinerja  penagihan.
+> **Definition:**  
+> Pembuatan Model Memprediksi Tingkat Kesulitan Penagihan untuk setiap profil customer, serta merekomendasikan cara penagihan yang efektif (Clustering, Classification) untuk setiap Profil Pelanggan sehingga mengoptimalkan kinerja penagihan.
 
 ### Fitur 2: [AI Collector Profiling](#21-predict-collector-profile)
+
 > **PIC**: Roviani Amelia  
-**Definition:**  
-Pembuatan Model Identifikasi dari setiap kolektor, Pola  Penagihan yang efektif vs kurang efektif dari yang bersangkutan dibandingkan dengan profil pelanggan yang ada.
+> **Definition:**  
+> Pembuatan Model Identifikasi dari setiap kolektor, Pola Penagihan yang efektif vs kurang efektif dari yang bersangkutan dibandingkan dengan profil pelanggan yang ada.
 
 ### Fitur 3: [AI Collection Strategy per Account](#31-predict-collection-strategy)
+
 > **PIC**: Muhammad Reyhan Fitriyan  
-**Definition:**  
-Pembuatan Model Mengefisienkan Strategi  Penagihan, Melalui rekomendasi cara menagih untuk setiap akun pelanggan dan profil cluster  pelanggan, dengan menggunakan data perilaku, Transaksi, nilai scoring dan data profiling yang  ada.
+> **Definition:**  
+> Pembuatan Model Mengefisienkan Strategi Penagihan, Melalui rekomendasi cara menagih untuk setiap akun pelanggan dan profil cluster pelanggan, dengan menggunakan data perilaku, Transaksi, nilai scoring dan data profiling yang ada.
 
 ### Fitur 4: [AI Inventory Assignment Optimization and Campaign Management](#41-predict-campaign)
+
 > **PIC**: Muhammad Othman Lutfi  
-**Definition:**  
-Pembuatan Model  Mengefisienkan penagihan melalui pengoptimalan penugasan akun ke kolektor tertentu, dan  mengikutsertakannya ke program penagihan khusus yang paling cocok (collection campaign).
+> **Definition:**  
+> Pembuatan Model Mengefisienkan penagihan melalui pengoptimalan penugasan akun ke kolektor tertentu, dan mengikutsertakannya ke program penagihan khusus yang paling cocok (collection campaign).
 
 ### Fitur 5: [AI Activity, Location, Distance and Time Optimization](#51-predict-best-time-to-bill)
+
 > **PIC**: Abdul Roid  
-**Definition:**  
-Pengoptimalan Penggunaan  Waktu dan aktivitas Sumber Daya Dalam Operasi Penagihan, seperti best time to do what,  tingkat efektifitas untuk campaign seperti apa, siapa lebih baik di assign untuk bekerja dimana,  melakukan apa, jam berapa, kapan dari segi hari dan minggu.
+> **Definition:**  
+> Pengoptimalan Penggunaan Waktu dan aktivitas Sumber Daya Dalam Operasi Penagihan, seperti best time to do what, tingkat efektifitas untuk campaign seperti apa, siapa lebih baik di assign untuk bekerja dimana, melakukan apa, jam berapa, kapan dari segi hari dan minggu.
 
 ### Fitur 7: [AI Workload Analysis, Prediction, and Optimization](#71-predict-workload-score)
+
 > **PIC**: Brev William Fiden Saragih  
-**Definition:**  
-Pembuatan Model  Memprediksi dan mengoptimalisasi Beban Kerja di Departemen Penagihan sesuai  lokasi, cabang, dan aging, dengan memprediksi intensitas, frekuensi, campaign,  serta trend dari kinerja team, serta rekomendasi optimalisasinya.
+> **Definition:**  
+> Pembuatan Model Memprediksi dan mengoptimalisasi Beban Kerja di Departemen Penagihan sesuai lokasi, cabang, dan aging, dengan memprediksi intensitas, frekuensi, campaign, serta trend dari kinerja team, serta rekomendasi optimalisasinya.
 
 ### Fitur 8: [AI Collection Cost Effectiveness](#81-predict-cost-effectiveness)
+
 > **PIC**: Anugrah Aidin Yotolembah  
-**Definition:**  
-Pembuatan model mengefisienkan dan  efektivitas biaya, dengan membandingkan hasil Analisa workload dengan target  kinerja dan loss forecast.
+> **Definition:**  
+> Pembuatan model mengefisienkan dan efektivitas biaya, dengan membandingkan hasil Analisa workload dengan target kinerja dan loss forecast.
 
 ### Fitur 9: [AI Omni ChannelBot](#91-predict-recommended-solution)
+
 > **PIC**: Ahmad Alfaruq  
-**Definition:**  
-Pembuatan model mengotomatisasi chatbot,  interaksi reminder penagihan dan menjawab pertanyaan pelanggan secara  cepat dan akurat di channel digital, melakukan follow up sesuai janji waktu  pembayaran (NLP), memberikan dukungan teknis, memberikan rekomendasi  produk dan layanan, melakukan eskalasi dan forward ke PIC selanjutnya.
+> **Definition:**  
+> Pembuatan model mengotomatisasi chatbot, interaksi reminder penagihan dan menjawab pertanyaan pelanggan secara cepat dan akurat di channel digital, melakukan follow up sesuai janji waktu pembayaran (NLP), memberikan dukungan teknis, memberikan rekomendasi produk dan layanan, melakukan eskalasi dan forward ke PIC selanjutnya.
 
 ### Fitur 11: [AI First Payment Default Prevention](#111-predict-default-solution-kredit-pinjaman)
+
 > **PIC**: Yoga Fatwanto  
-**Definition:**  
-Mencegah first payment default atau  debitur realisasi baru menunggak, dengan diagnosis cepat atas data perilaku,  identifikasi profil, pergerakan trend peningkatan portofolio tertentu dalam  portofolio collection, vintage results, rekomendasi penanganan, siapa, dimana, dan  solusi non regular (Diskon, bagi tanggung jawab dengan sales, early write off).
+> **Definition:**  
+> Mencegah first payment default atau debitur realisasi baru menunggak, dengan diagnosis cepat atas data perilaku, identifikasi profil, pergerakan trend peningkatan portofolio tertentu dalam portofolio collection, vintage results, rekomendasi penanganan, siapa, dimana, dan solusi non regular (Diskon, bagi tanggung jawab dengan sales, early write off).
 
 ### Fitur 12: [AI Restructure Analysis Automation](#121-predict-recommendation-tenor)
+
 > **PIC**: Putra Al Farizi  
-**Definition:**  
-Pembuatan model  mengotomatisasi dan Merekemondasi proses persetujuan restrukturisasi dalam  penagihan, seperti layaknya pemberian kredit baru (Analisa kredit ala AI)
+> **Definition:**  
+> Pembuatan model mengotomatisasi dan Merekemondasi proses persetujuan restrukturisasi dalam penagihan, seperti layaknya pemberian kredit baru (Analisa kredit ala AI)
 
 ### Fitur 13: AI Reschedule Automation
-> **PIC**: Nur Azkia Rahmah  
-**Definition:**  
-Pembuatan Model mengotomatisasi dan  mengoptimalkan proses reschedule dalam penagihan, meliputi mekanisme  reschedule, mekanisme follow up, auto reminder, modifikasi tenor dan waktu  pembayaran, dengan Kecerdasan Artifisial (AI)
 
-### Fitur 16: AI Warehouse Inventory Management, Storing, Selling, Cost  Projection, and Fraud Detection
+> **PIC**: Nur Azkia Rahmah  
+> **Definition:**  
+> Pembuatan Model mengotomatisasi dan mengoptimalkan proses reschedule dalam penagihan, meliputi mekanisme reschedule, mekanisme follow up, auto reminder, modifikasi tenor dan waktu pembayaran, dengan Kecerdasan Artifisial (AI)
+
+### Fitur 16: AI Warehouse Inventory Management, Storing, Selling, Cost Projection, and Fraud Detection
+
 > **PIC**: Sintya Tri Wahyu Adityawati  
-**Definition:**  
-Pembuatan model memprediksi dan  mengoptimalkan pengelolaan persediaan dan gudang, serta mengurangi  potensi fraud dalam proses penyimpanan unit sitaan/jaminan.
+> **Definition:**  
+> Pembuatan model memprediksi dan mengoptimalkan pengelolaan persediaan dan gudang, serta mengurangi potensi fraud dalam proses penyimpanan unit sitaan/jaminan.
 
 ### Fitur 17: [AI Collection Fraud Prevention](#171-predict-fraud)
+
 > **PIC**: Dwi Duta Mahardewantoro  
-**Definition:**  
-Menggunakan Kecerdasan Artifisial  (AI) untuk Minimalisasi Fraud Biaya Operasional, Fraud biaya hukum dan biaya  penyitaan di unit collection dan remedial, meliputi pola umum, profil pelaku,  profil modus, pola melibatkan pihak eksternal dan transportasi luar kota
+> **Definition:**  
+> Menggunakan Kecerdasan Artifisial (AI) untuk Minimalisasi Fraud Biaya Operasional, Fraud biaya hukum dan biaya penyitaan di unit collection dan remedial, meliputi pola umum, profil pelaku, profil modus, pola melibatkan pihak eksternal dan transportasi luar kota
 
 ### Fitur 18: [AI Collection and Loss Reserve Forecast](#181-predict-loss-reverse)
+
 > **PIC**: Dhoni Hanif Supriyadi  
-**Definition:**  
-Pembuatan Model  Memprediksi tagihan yang tidak tertagih dan kerugian yang terjadi dalam  portofolio tagihan perusahaan, termasuk kemungkinan biaya yang akan terjadi  dan kinerja tim penagihan, serta perkiraannya untuk 3-12 bulan kedepan.
+> **Definition:**  
+> Pembuatan Model Memprediksi tagihan yang tidak tertagih dan kerugian yang terjadi dalam portofolio tagihan perusahaan, termasuk kemungkinan biaya yang akan terjadi dan kinerja tim penagihan, serta perkiraannya untuk 3-12 bulan kedepan.
 
 ### Fitur 19: AI Collection Rehabilitation
+
 > **PIC**: Lusi Yustika Rachman  
-**Definition:**  
-Pembuatan model memprediksi  proses penanganan pelanggan yang pernah gagal membayar, dan  rekomendasi pengawasannya (siapa, bagaimana, frekuensi, intensitas,  informasi apa yang harus dipantau dan dikumpulkan) agar tidak kembali  macet.
+> **Definition:**  
+> Pembuatan model memprediksi proses penanganan pelanggan yang pernah gagal membayar, dan rekomendasi pengawasannya (siapa, bagaimana, frekuensi, intensitas, informasi apa yang harus dipantau dan dikumpulkan) agar tidak kembali macet.
 
 ## Endpoints
+
 ### 1.1. Predict Collection Difficulty Score
+
 - **URL** : `/fitur-1/predict-difficulty-score/`
 - **Method** : POST
 - **Request Body** :
+
 ```json
 {
   "debtor_nik": "3214104104104101",
@@ -182,7 +206,9 @@ Pembuatan model memprediksi  proses penanganan pelanggan yang pernah gagal memba
   "aging": 0
 }
 ```
+
 - **Example Response** :
+
 ```json
 {
   "status": 200,
@@ -195,9 +221,11 @@ Pembuatan model memprediksi  proses penanganan pelanggan yang pernah gagal memba
 ```
 
 ### 2.1. Predict Collector Profile
+
 - **URL** : `/fitur-2/collectorlabel/`
 - **Method** : POST
 - **Request Body** :
+
 ```json
 {
   "collector_ID": 3276024508020006,
@@ -225,12 +253,14 @@ Pembuatan model memprediksi  proses penanganan pelanggan yang pernah gagal memba
   "negotiation_result": "Rencana pembayaran alternatif"
 }
 ```
+
 - **Example Response** :
+
 ```json
 {
-"status": 200,
-"message": "success",
-"result": {
+  "status": 200,
+  "message": "success",
+  "result": {
     "age_label": "Muda",
     "location_label": "Muda",
     "behavior_label": "Disiplin",
@@ -243,21 +273,23 @@ Pembuatan model memprediksi  proses penanganan pelanggan yang pernah gagal memba
 ```
 
 ### 2.2. Predict Debtor Profile
+
 - **URL** : `/fitur-2/debtorlabel/`
 - **Method** : POST
 - **Request Body** :
+
 ```json
 {
-  "debtor_age":"25",
-  "debtor_gender":"Perempuan",
-  "debtor_nik":"3276024508020006",
+  "debtor_age": "25",
+  "debtor_gender": "Perempuan",
+  "debtor_nik": "3276024508020006",
   "debtor_address": "Jalan Kapitan Raya RT 08/ RW 01, Sukatani, Tapos, Depok, Jawa Barat",
   "debtor_marital_status": "Belum Menikah",
   "debtor_number_of_dependents": 1,
   "debtor_education_level": "SMA",
   "debtor_occupation": "Pegawai Negeri",
   "debtor_monthly_income": 5000000,
-  "debtor_monthly_expense": 3000000, 
+  "debtor_monthly_expense": 3000000,
   "debtor_asset_ownership": "Tidak",
   "debtor_communication_channel": "Telepon",
   "risk_credit": "Baik",
@@ -284,16 +316,18 @@ Pembuatan model memprediksi  proses penanganan pelanggan yang pernah gagal memba
   "history_dec": 0,
   "debtor_aging": "DPK",
   "transaction": 8,
-  "remaining_loan":7400000,
+  "remaining_loan": 7400000,
   "billing_type": "Telepon"
 }
 ```
+
 - **Example Response** :
+
 ```json
 {
-"status": 200,
-"message": "success",
-"result": {
+  "status": 200,
+  "message": "success",
+  "result": {
     "age_label": "Muda",
     "location_label": "Jawa",
     "behavior_label": "Disiplin",
@@ -306,56 +340,62 @@ Pembuatan model memprediksi  proses penanganan pelanggan yang pernah gagal memba
 ```
 
 ### 3.1. Predict Collection Strategy
+
 - **URL** : `/fitur-3/predict-collection-strategy/`
 - **Method** : POST
 - **Request Body** :
+
 ```json
 {
-    "debtor_nik": 5837029610457921,
-    "debtor_name": "Ani Putri",
-    "debtor_gender": "perempuan",
-    "debtor_birth_place": "Jawa Timur, 23-02-1996",
-    "debtor_age": 27,
-    "debtor_address": "Jl. Sudirman No. 5, Surabaya, Jawa Timur 60111",
-    "debtor_zip": 60111,
-    "debtor_rt": 3,
-    "debtor_rw": 6,
-    "debtor_marital_status": "Menikah",
-    "debtor_occupation": "Pegawai Swasta",
-    "debtor_company": "PT Indofood",
-    "debtor_number": "+62 814-6887-1718",
-    "collection_day_type": "Hari kerja",
-    "loan_amount": 35000000,
-    "debtor_education_level": "S-1",
-    "credit_score": 650,
-    "aging": "Dalam Perhatian Khusus",
-    "previous_collection_status": "Berhasil",
-    "previous_payment_status": "Terlambat",
-    "amount_of_late_days": 7,
-    "tenure": 24,
-    "debtor_latitude": -6.947324,
-    "debtor_longitude": 110.688436
+  "debtor_nik": 5837029610457921,
+  "debtor_name": "Ani Putri",
+  "debtor_gender": "perempuan",
+  "debtor_birth_place": "Jawa Timur, 23-02-1996",
+  "debtor_age": 27,
+  "debtor_address": "Jl. Sudirman No. 5, Surabaya, Jawa Timur 60111",
+  "debtor_zip": 60111,
+  "debtor_rt": 3,
+  "debtor_rw": 6,
+  "debtor_marital_status": "Menikah",
+  "debtor_occupation": "Pegawai Swasta",
+  "debtor_company": "PT Indofood",
+  "debtor_number": "+62 814-6887-1718",
+  "collection_day_type": "Hari kerja",
+  "loan_amount": 35000000,
+  "debtor_education_level": "S-1",
+  "credit_score": 650,
+  "aging": "Dalam Perhatian Khusus",
+  "previous_collection_status": "Berhasil",
+  "previous_payment_status": "Terlambat",
+  "amount_of_late_days": 7,
+  "tenure": 24,
+  "debtor_latitude": -6.947324,
+  "debtor_longitude": 110.688436
 }
 ```
+
 - **Example Response** :
+
 ```json
 {
-    "status": 200,
-    "message": "success",
-    "result": {
-      "best_collection_time": "pagi, malam",
-      "best_collection_method": "Telepon",
-      "best_collector_id": 523,
-      "best_collector_name": "Donna Hoover",
-      "best_collector_distance_to_debtor_in_km": 9.597850484422
-    }
+  "status": 200,
+  "message": "success",
+  "result": {
+    "best_collection_time": "pagi, malam",
+    "best_collection_method": "Telepon",
+    "best_collector_id": 523,
+    "best_collector_name": "Donna Hoover",
+    "best_collector_distance_to_debtor_in_km": 9.597850484422
+  }
 }
 ```
 
 ### 4.1. Predict Campaign
+
 - **URL** : `/fitur-4/predict-assignment/`
 - **Method** : POST
 - **Request Body** :
+
 ```json
 {
   "debtor_nik": 4498921163765183,
@@ -393,7 +433,9 @@ Pembuatan model memprediksi  proses penanganan pelanggan yang pernah gagal memba
   "category_campaign": "Call"
 }
 ```
+
 - **Example Response** :
+
 ```json
 {
   "status": 200,
@@ -403,9 +445,11 @@ Pembuatan model memprediksi  proses penanganan pelanggan yang pernah gagal memba
 ```
 
 ### 4.2. Predict Assignment
+
 - **URL** : `/fitur-4/predict-campaign/`
 - **Method** : POST
 - **Request Body** :
+
 ```json
 {
   "debtor_nik": 4498921163765183,
@@ -443,7 +487,9 @@ Pembuatan model memprediksi  proses penanganan pelanggan yang pernah gagal memba
   "category_campaign": "Call"
 }
 ```
+
 - **Example Response** :
+
 ```json
 {
   "status": 200,
@@ -453,20 +499,22 @@ Pembuatan model memprediksi  proses penanganan pelanggan yang pernah gagal memba
 ```
 
 ### 5.1. Predict Best Time to Bill
+
 - **URL** : `/fitur-5/predict-best-time-to-bill/`
 - **Method** : POST
 - **Request Body** :
+
 ```json
 {
-  "debtor_nik":1234567890987654,
-  "debtor_name":"Ibun Bunaiya",  
+  "debtor_nik": 1234567890987654,
+  "debtor_name": "Ibun Bunaiya",
   "debtor_gender": "Laki-Laki",
   "debtor_birth_place": "Semarang, 15-05-1968",
   "debtor_age": 55,
   "debtor_education_level": "S2",
   "debtor_address": "123 Main Street",
   "debtor_latitude": 40.7128,
-  "debtor_longitude": -74.0060,
+  "debtor_longitude": -74.006,
   "debtor_zip": "12345",
   "debtor_rt": "3",
   "debtor_rw": "4",
@@ -476,39 +524,42 @@ Pembuatan model memprediksi  proses penanganan pelanggan yang pernah gagal memba
   "tenor": 53
 }
 ```
+
 - **Example Response** :
+
 ```json
 {
-    "status": 200,
-    "message": "success",
-    "result": {
-      "best_time_to_bill": "Sore",
-      "best_time_to_bill_probability": 
-      [
-        "Sore : 60.19%",
-        "Malam : 39.81%",
-        "Pagi : 0.00%",
-        "Siang : 0.00%"
-      ]
-    }
+  "status": 200,
+  "message": "success",
+  "result": {
+    "best_time_to_bill": "Sore",
+    "best_time_to_bill_probability": [
+      "Sore : 60.19%",
+      "Malam : 39.81%",
+      "Pagi : 0.00%",
+      "Siang : 0.00%"
+    ]
+  }
 }
 ```
 
 ### 5.2. Predict Recommendation Collectors for Debtor
+
 - **URL** : `/fitur-5/predict-recommended-collectors-assignments/`
 - **Method** : POST
 - **Request Body** :
+
 ```json
 {
-  "debtor_nik":1234567890987654,
-  "debtor_name":"Ibun Bunaiya",  
+  "debtor_nik": 1234567890987654,
+  "debtor_name": "Ibun Bunaiya",
   "debtor_gender": "Laki-Laki",
   "debtor_birth_place": "Semarang, 15-05-1968",
   "debtor_age": 55,
   "debtor_education_level": "S2",
   "debtor_address": "123 Main Street",
   "debtor_latitude": 40.7128,
-  "debtor_longitude": -74.0060,
+  "debtor_longitude": -74.006,
   "debtor_zip": "12345",
   "debtor_rt": "3",
   "debtor_rw": "4",
@@ -518,33 +569,36 @@ Pembuatan model memprediksi  proses penanganan pelanggan yang pernah gagal memba
   "tenor": 53
 }
 ```
+
 - **Example Response** :
+
 ```json
 {
-    "status": 200,
-    "message": "success",
-    "result": {
-      "recommended_collectors_to_assign": 
-      [
-        "Aaron Smith",
-        "Richard Wade",
-        "Anna Lin",
-        "Isaac Dunn",
-        "Andrew Murray II",
-        "Glenn Little",
-        "Kathy Riggs",
-        "John Lopez",
-        "Andrew Tyler",
-        "Kelly Young"
-      ]
-    }
+  "status": 200,
+  "message": "success",
+  "result": {
+    "recommended_collectors_to_assign": [
+      "Aaron Smith",
+      "Richard Wade",
+      "Anna Lin",
+      "Isaac Dunn",
+      "Andrew Murray II",
+      "Glenn Little",
+      "Kathy Riggs",
+      "John Lopez",
+      "Andrew Tyler",
+      "Kelly Young"
+    ]
+  }
 }
 ```
 
 ### 5.3. Predict Interaction Efficiency Cluster
+
 - **URL** : `/fitur-5/predict-interaction-efficiency-cluster/`
 - **Method** : POST
 - **Request Body** :
+
 ```json
 {
   "collector_name": "Josko Gvardiol",
@@ -564,56 +618,62 @@ Pembuatan model memprediksi  proses penanganan pelanggan yang pernah gagal memba
   "nonproductive_duration": 4850
 }
 ```
+
 - **Example Response** :
+
 ```json
 {
-    "status": 200,
-    "message": "success",
-    "result": {
-      "category_cluster": "Efisien dalam Respon dan Interaksi"
-    }
+  "status": 200,
+  "message": "success",
+  "result": {
+    "category_cluster": "Efisien dalam Respon dan Interaksi"
+  }
 }
 ```
 
 ### 7.1. Predict Workload Score
+
 - **URL** : `/fitur-7/predict-workload/`
 - **Method** : POST
 - **Request Body** :
+
 ```json
 {
-  "collector_name":"Mykhailo Mudryk",
-  "collector_address":"Jalan Mawar No. 40\nMetro, Jawa Timur 53794",
-  "collector_number":"+62 (097) 530-5219",
-  "collector_nik":6952660116035317,
-  "collector_zip":53794,
-  "collector_rt":1,
-  "collector_rw":9,
-  "collector_birth_place":"DI Yogyakarta, 20-08-1998",
-  "collector_marital_status":"Cerai hidup",
-  "collector_gender":"laki-laki",
-  "collector_id":"C1001",
-  "team_id":"T0201",
-  "success_rate":0.3370757033,
-  "campaigns_count":110,
-  "most_campaign_count":28,
-  "collection_difficulty_score_avg":608.3623727332,
-  "collector_age":32,
-  "weekly_collector_working_hours":50.096235135,
-  "weekly_debtor_volume_handled":13,
-  "weekly_call_contacts_hours":12.3248313882,
-  "weekly_digital_messages_hours":19.5491412667,
-  "weekly_field_action_hours":17.6727666326,
-  "digital_campaigns_count":35,
-  "call_campaigns_count":13,
-  "field_campaigns_count":5,
-  "team_resolution_time_avg":5.7241665016,
-  "team_first_time_resolution_rate":0.3092629799,
-  "team_escalation_rate":0.2751522376,
-  "team_member_cases_total":64,
-  "team_response_time_avg":9.4055413923
+  "collector_name": "Mykhailo Mudryk",
+  "collector_address": "Jalan Mawar No. 40\nMetro, Jawa Timur 53794",
+  "collector_number": "+62 (097) 530-5219",
+  "collector_nik": 6952660116035317,
+  "collector_zip": 53794,
+  "collector_rt": 1,
+  "collector_rw": 9,
+  "collector_birth_place": "DI Yogyakarta, 20-08-1998",
+  "collector_marital_status": "Cerai hidup",
+  "collector_gender": "laki-laki",
+  "collector_id": "C1001",
+  "team_id": "T0201",
+  "success_rate": 0.3370757033,
+  "campaigns_count": 110,
+  "most_campaign_count": 28,
+  "collection_difficulty_score_avg": 608.3623727332,
+  "collector_age": 32,
+  "weekly_collector_working_hours": 50.096235135,
+  "weekly_debtor_volume_handled": 13,
+  "weekly_call_contacts_hours": 12.3248313882,
+  "weekly_digital_messages_hours": 19.5491412667,
+  "weekly_field_action_hours": 17.6727666326,
+  "digital_campaigns_count": 35,
+  "call_campaigns_count": 13,
+  "field_campaigns_count": 5,
+  "team_resolution_time_avg": 5.7241665016,
+  "team_first_time_resolution_rate": 0.3092629799,
+  "team_escalation_rate": 0.2751522376,
+  "team_member_cases_total": 64,
+  "team_response_time_avg": 9.4055413923
 }
 ```
+
 - **Example Response** :
+
 ```json
 {
   "status": 200,
@@ -626,51 +686,55 @@ Pembuatan model memprediksi  proses penanganan pelanggan yang pernah gagal memba
 ```
 
 ### 7.2. Recommend Campaign
+
 - **URL** : `/fitur-7/recommend-campaign`
 - **Method** : POST
 - **Request Body** :
+
 ```json
 {
-  "debtor_nik":5233673178135086,
-  "debtor_name":"R.A. Yessi Hidayat",
-  "debtor_gender":"perempuan",
-  "debtor_birth_place":"Sulawesi Selatan, 15-01-1987",
-  "debtor_age":36,
-  "debtor_address":"Jalan Dipatiukur No. 553\nPalangkaraya, Nusa Tenggara Timur 47573",
-  "debtor_zip":47573,
-  "debtor_rt":11,
-  "debtor_rw":10,
-  "debtor_marital_status":"Belum menikah",
-  "debtor_occupation":"Profesional",
-  "debtor_company":"CV Kurniawan Wasita",
-  "debtor_number":"+62 (059) 742 6115",
-  "debtor_id":"D0316",
-  "action_code":"INCO",
-  "debtor_location":"Pekanbaru",
-  "debtor_npl_history":111212222212,
-  "aging":"DPK",
-  "collector_name":"Stephen Lee",
-  "collector_address":"Gg. Dr. Djunjunan No. 4\nTarakan, JK 18302",
-  "collector_number":"+62-090-511-3257",
-  "collector_nik":6266983748483711,
-  "collector_zip":18302,
-  "collector_rt":9,
-  "collector_rw":17,
-  "collector_birth_place":"Kalimantan Barat, 30-03-1968",
-  "collector_age":55,
-  "collector_marital_status":"Belum menikah",
-  "collector_gender":"perempuan",
-  "workload_score":525.944086336,
-  "workload_level":"normal",
-  "collector_location":"Makassar",
-  "collector_vehicle":"Punya",
-  "collector_id":"C0160",
-  "debtor_location_coord":"0.5262455:101.4515727",
-  "collector_location_coord":"-5.1342962:119.4124282",
-  "debtor_collector_distance":2082.8220212786
+  "debtor_nik": 5233673178135086,
+  "debtor_name": "R.A. Yessi Hidayat",
+  "debtor_gender": "perempuan",
+  "debtor_birth_place": "Sulawesi Selatan, 15-01-1987",
+  "debtor_age": 36,
+  "debtor_address": "Jalan Dipatiukur No. 553\nPalangkaraya, Nusa Tenggara Timur 47573",
+  "debtor_zip": 47573,
+  "debtor_rt": 11,
+  "debtor_rw": 10,
+  "debtor_marital_status": "Belum menikah",
+  "debtor_occupation": "Profesional",
+  "debtor_company": "CV Kurniawan Wasita",
+  "debtor_number": "+62 (059) 742 6115",
+  "debtor_id": "D0316",
+  "action_code": "INCO",
+  "debtor_location": "Pekanbaru",
+  "debtor_npl_history": 111212222212,
+  "aging": "DPK",
+  "collector_name": "Stephen Lee",
+  "collector_address": "Gg. Dr. Djunjunan No. 4\nTarakan, JK 18302",
+  "collector_number": "+62-090-511-3257",
+  "collector_nik": 6266983748483711,
+  "collector_zip": 18302,
+  "collector_rt": 9,
+  "collector_rw": 17,
+  "collector_birth_place": "Kalimantan Barat, 30-03-1968",
+  "collector_age": 55,
+  "collector_marital_status": "Belum menikah",
+  "collector_gender": "perempuan",
+  "workload_score": 525.944086336,
+  "workload_level": "normal",
+  "collector_location": "Makassar",
+  "collector_vehicle": "Punya",
+  "collector_id": "C0160",
+  "debtor_location_coord": "0.5262455:101.4515727",
+  "collector_location_coord": "-5.1342962:119.4124282",
+  "debtor_collector_distance": 2082.8220212786
 }
 ```
+
 - **Example Response** :
+
 ```json
 {
   "status": 200,
@@ -683,33 +747,37 @@ Pembuatan model memprediksi  proses penanganan pelanggan yang pernah gagal memba
 ```
 
 ### 7.3. Recommend Field Collector
+
 - **URL** : `/fitur-7/recommend-field-collector/`
 - **Method** : POST
 - **Request Body** :
+
 ```json
 {
-  "debtor_nik":6835138002000107,
-  "debtor_name":"Darmana Wastuti, S.I.Kom",
-  "debtor_gender":"perempuan",
-  "debtor_birth_place":"Jawa Tengah, 12-02-1998",
-  "debtor_age":25,
-  "debtor_address":"Jalan Gegerkalong Hilir No. 37\nPalangkaraya, Sulawesi Barat 35394",
-  "debtor_zip":35394,
-  "debtor_rt":6,
-  "debtor_rw":15,
-  "debtor_marital_status":"Cerai mati",
-  "debtor_occupation":"Buruh",
-  "debtor_company":"PD Winarno Anggriawan Tbk",
-  "debtor_number":"+62 (0289) 208-9883",
-  "debtor_id":"D1000",
-  "action_code":"HUPD",
-  "debtor_location":"Bandung",
-  "debtor_npl_history":122333343232,
-  "aging":"Kurang Lancar",
-  "debtor_location_coord":"-6.9215529:107.6110212"
+  "debtor_nik": 6835138002000107,
+  "debtor_name": "Darmana Wastuti, S.I.Kom",
+  "debtor_gender": "perempuan",
+  "debtor_birth_place": "Jawa Tengah, 12-02-1998",
+  "debtor_age": 25,
+  "debtor_address": "Jalan Gegerkalong Hilir No. 37\nPalangkaraya, Sulawesi Barat 35394",
+  "debtor_zip": 35394,
+  "debtor_rt": 6,
+  "debtor_rw": 15,
+  "debtor_marital_status": "Cerai mati",
+  "debtor_occupation": "Buruh",
+  "debtor_company": "PD Winarno Anggriawan Tbk",
+  "debtor_number": "+62 (0289) 208-9883",
+  "debtor_id": "D1000",
+  "action_code": "HUPD",
+  "debtor_location": "Bandung",
+  "debtor_npl_history": 122333343232,
+  "aging": "Kurang Lancar",
+  "debtor_location_coord": "-6.9215529:107.6110212"
 }
 ```
+
 - **Example Response** :
+
 ```json
 {
   "status": 200,
@@ -736,9 +804,11 @@ Pembuatan model memprediksi  proses penanganan pelanggan yang pernah gagal memba
 ```
 
 ### 8.1. Predict Cost Effectiveness
+
 - **URL** : `/fitur-8/predict-CostEffectivenessPrediction/`
 - **Method** : POST
 - **Request Body** :
+
 ```json
 {
   "debtor_name": 7922460216135313,
@@ -751,7 +821,9 @@ Pembuatan model memprediksi  proses penanganan pelanggan yang pernah gagal memba
   "debtor_occupation": 4
 }
 ```
+
 - **Example Response** :
+
 ```json
 {
   "status": 200,
@@ -764,9 +836,11 @@ Pembuatan model memprediksi  proses penanganan pelanggan yang pernah gagal memba
 ```
 
 ### 9.1. Predict Recommended Solution
+
 - **URL** : `/fitur-9/predict-recomended-solution/kredit-pinjaman`
 - **Method** : POST
 - **Request Body** :
+
 ```json
 {
   "debtor_name": "Maya Aulia",
@@ -788,7 +862,9 @@ Pembuatan model memprediksi  proses penanganan pelanggan yang pernah gagal memba
   "loan_purpose": 1
 }
 ```
+
 - **Example Response** :
+
 ```json
 {
   "status": 200,
@@ -800,9 +876,11 @@ Pembuatan model memprediksi  proses penanganan pelanggan yang pernah gagal memba
 ```
 
 ### 11.1. Predict Default Solution (Kredit Pinjaman)
+
 - **URL** : `/fitur-11/predict-default-solution/kredit-pinjaman`
 - **Method** : POST
 - **Request Body** :
+
 ```json
 {
   "debtor_nik": "4133424516345914",
@@ -836,7 +914,9 @@ Pembuatan model memprediksi  proses penanganan pelanggan yang pernah gagal memba
   "loan_purpose": "Kebutuhan darurat"
 }
 ```
+
 - **Example Response** :
+
 ```json
 {
   "status": 200,
@@ -850,9 +930,11 @@ Pembuatan model memprediksi  proses penanganan pelanggan yang pernah gagal memba
 ```
 
 ### 11.2. Predict Default Solution (Kredit Benda)
+
 - **URL** : `/fitur-11/predict-default-solution/kredit-benda`
 - **Method** : POST
 - **Request Body** :
+
 ```json
 {
   "debtor_nik": "7834621118366601",
@@ -888,7 +970,9 @@ Pembuatan model memprediksi  proses penanganan pelanggan yang pernah gagal memba
   "loan_purpose": "kendaraan bermotor"
 }
 ```
+
 - **Example Response** :
+
 ```json
 {
   "status": 200,
@@ -902,107 +986,116 @@ Pembuatan model memprediksi  proses penanganan pelanggan yang pernah gagal memba
 ```
 
 ### 12.1. Predict Recommendation Tenor
+
 - **URL** : `/fitur-12/recommendation-tenor/`
 - **Method** : POST
 - **Request Body** :
+
 ```json
 {
-  "debtor_nik": 4133431716345918, 
-  "debtor_name": "Cemplunk Zulaika", 
-  "debtor_gender": "perempuan", 
-  "debtor_birth_place": "Bengkulu, 23-09-1997", 
-  "debtor_address": "Jalan Raya Setiabudhi No. 857\nBanjarbaru, KR 12188", 
-  "debtor_zip": 12188, 
-  "debtor_rt": 6, 
-  "debtor_rw": 10, 
-  "debtor_marital_status": "Menikah", 
-  "debtor_company": "CV Nugroho Melani (Persero) Tbk", 
-  "debtor_number": "+62 (102) 776 3467", 
-  "debtor_id": 180034427373791, "debtor_age": 32, 
-  "debtor_occupation": "Pengusaha", 
-  "monthly_income": 50100000, 
-  "debt": 7925000.0, 
-  "dti": 0.1581836327345309, 
-  "monthly_expenses": 3100000, 
-  "net_income": 47000000, 
-  "asset_value": 89500000, 
-  "previous_credit_monthly_income": 26900000, 
-  "financial_changes": 23200000, 
-  "business_conditions": 35, 
-  "credit_score": 414, 
-  "amount_of_late_days": 61, 
-  "credit_goals": "Investasi", 
-  "collateral": 52600000, 
-  "interest_rate": 11.101694915254235, 
-  "number_of_dependents": 0, 
-  "old_tenor": 33, 
-  "old_collateral": 32800000, 
-  "fee_installments": 100000, 
-  "ltv": 0.8927985948477751, 
-  "remaining_loan": 39800000, 
-  "arrear_amount": 2, 
-  "monthly_income_family": 44200000, 
-  "monthly_expense_family": 24700000, 
-  "family_health": "Tidak sehat", 
-  "asset_value_family": 38800000, 
-  "old_monthly_payments": 2566954.160246533, 
+  "debtor_nik": 4133431716345918,
+  "debtor_name": "Cemplunk Zulaika",
+  "debtor_gender": "perempuan",
+  "debtor_birth_place": "Bengkulu, 23-09-1997",
+  "debtor_address": "Jalan Raya Setiabudhi No. 857\nBanjarbaru, KR 12188",
+  "debtor_zip": 12188,
+  "debtor_rt": 6,
+  "debtor_rw": 10,
+  "debtor_marital_status": "Menikah",
+  "debtor_company": "CV Nugroho Melani (Persero) Tbk",
+  "debtor_number": "+62 (102) 776 3467",
+  "debtor_id": 180034427373791,
+  "debtor_age": 32,
+  "debtor_occupation": "Pengusaha",
+  "monthly_income": 50100000,
+  "debt": 7925000.0,
+  "dti": 0.1581836327345309,
+  "monthly_expenses": 3100000,
+  "net_income": 47000000,
+  "asset_value": 89500000,
+  "previous_credit_monthly_income": 26900000,
+  "financial_changes": 23200000,
+  "business_conditions": 35,
+  "credit_score": 414,
+  "amount_of_late_days": 61,
+  "credit_goals": "Investasi",
+  "collateral": 52600000,
+  "interest_rate": 11.101694915254235,
+  "number_of_dependents": 0,
+  "old_tenor": 33,
+  "old_collateral": 32800000,
+  "fee_installments": 100000,
+  "ltv": 0.8927985948477751,
+  "remaining_loan": 39800000,
+  "arrear_amount": 2,
+  "monthly_income_family": 44200000,
+  "monthly_expense_family": 24700000,
+  "family_health": "Tidak sehat",
+  "asset_value_family": 38800000,
+  "old_monthly_payments": 2566954.160246533,
   "loan_amount": 76245000.0
 }
 ```
+
 - **Example Response** :
+
 ```json
 {
   "status": 200,
   "message": "success",
   "result": [
-      {
-          "debtor_name": "Cemplunk Zulaika",
-          "debtor_nik": 4133431716345918,
-          "debtor_id": 180034427373791,
-          "recomendation_tenor": 164.00000000000017,
-          "recomendation_monthly_payments": 516521.26395204576
-      }
+    {
+      "debtor_name": "Cemplunk Zulaika",
+      "debtor_nik": 4133431716345918,
+      "debtor_id": 180034427373791,
+      "recomendation_tenor": 164.00000000000017,
+      "recomendation_monthly_payments": 516521.26395204576
+    }
   ]
 }
 ```
 
 ### 12.2. Predict Request Loan
+
 - **URL** : `/fitur-12/request-loan/`
 - **Method** : POST
 - **Request Body** :
+
 ```json
 {
-  "debtor_nik": 4133431716345918, 
-  "debtor_name": "Cemplunk Zulaika", 
-  "debtor_gender": "perempuan", 
-  "debtor_birth_place": "Bengkulu, 23-09-1997", 
-  "debtor_address": "Jalan Raya Setiabudhi No. 857\nBanjarbaru, KR 12188", 
-  "debtor_zip": 12188, 
-  "debtor_rt": 6, 
-  "debtor_rw": 10, 
-  "debtor_marital_status": "Menikah", 
-  "debtor_company": "CV Nugroho Melani (Persero) Tbk", 
-  "debtor_number": "+62 (102) 776 3467", 
-  "debtor_id": 180034427373791, 
-  "debtor_age": 32, 
-  "debtor_occupation": "Pengusaha", 
-  "monthly_income": 50100000, 
-  "debt": 7925000.0, 
-  "dti": 0.1581836327345309, 
-  "monthly_expenses": 3100000, 
-  "net_income": 47000000, 
-  "previous_credit_monthly_income": 26900000, 
-  "financial_changes": 23200000, 
-  "business_conditions": 35, 
-  "asset_value": 89500000, 
-  "interest_rate": 11.101694915254235, 
-  "collateral": 52600000, 
-  "old_collateral": 32800000, 
-  "ltv": 0.8927985948477751, 
+  "debtor_nik": 4133431716345918,
+  "debtor_name": "Cemplunk Zulaika",
+  "debtor_gender": "perempuan",
+  "debtor_birth_place": "Bengkulu, 23-09-1997",
+  "debtor_address": "Jalan Raya Setiabudhi No. 857\nBanjarbaru, KR 12188",
+  "debtor_zip": 12188,
+  "debtor_rt": 6,
+  "debtor_rw": 10,
+  "debtor_marital_status": "Menikah",
+  "debtor_company": "CV Nugroho Melani (Persero) Tbk",
+  "debtor_number": "+62 (102) 776 3467",
+  "debtor_id": 180034427373791,
+  "debtor_age": 32,
+  "debtor_occupation": "Pengusaha",
+  "monthly_income": 50100000,
+  "debt": 7925000.0,
+  "dti": 0.1581836327345309,
+  "monthly_expenses": 3100000,
+  "net_income": 47000000,
+  "previous_credit_monthly_income": 26900000,
+  "financial_changes": 23200000,
+  "business_conditions": 35,
+  "asset_value": 89500000,
+  "interest_rate": 11.101694915254235,
+  "collateral": 52600000,
+  "old_collateral": 32800000,
+  "ltv": 0.8927985948477751,
   "tenor": 164
 }
 ```
+
 - **Example Response** :
+
 ```json
 {
   "status": 200,
@@ -1019,61 +1112,65 @@ Pembuatan model memprediksi  proses penanganan pelanggan yang pernah gagal memba
 ```
 
 ### 17.1. Predict Fraud
+
 - **URL** : `/fitur-17/predict-fraud/`
 - **Method** : POST
 - **Request Body** :
+
 ```json
 {
-	"debtor_nik":3285167540917312,
-	"debtor_name":"Erik Ten Hag",
-	"debtor_gender":"laki-laki",
-	"debtor_birth_place":"Haaksbergen, 02-02-1970",
-	"debtor_age":53,
-	"debtor_address":"Gang Setiabudhi No. 8\nTangerang, NT 42062",
-	"debtor_zip":42062,
-	"debtor_rt":13,
-	"debtor_rw":4,
-	"debtor_marital_status":"Menikah",
-	"num_of_dependents":2,
-	"debtor_education_level":"S2",
-	"debtor_occupation":"Professional",
-	"debtor_company":"Manchester United F.C.",
-	"debtor_number":"+62 (103) 543 9582",
-	"monthly_income":9812845,
-	"monthly_expense":3785491,
-	"loan_type":"Pinjaman Bisnis",
-	"debtor_tenor":18,
-	"loan_amount":15053912,
-	"payment_history_jan":0,
-	"payment_history_feb":0,
-	"payment_history_mar":1,
-	"payment_history_apr":2,
-	"payment_history_may":1,
-	"payment_history_jun":1,
-	"payment_history_jul":0,
-	"payment_history_aug":1,
-	"payment_history_sep":2,
-	"payment_history_oct":3,
-	"payment_history_nov":2,
-	"payment_history_dec":1,
-	"debtor_aging":"DPK",
-	"transaction_frequency":11,
-	"remaining_loan":1589234,
-	"billing_frequency":1,
-	"billing_type":"Surat",
-	"debtor_response":"Positif",
-	"consumerism_level":"Rendah",
-	"debtor_mode":"Membayar utang",
-	"collector_type":"Komunikasi",
-	"collector_reputation":"Baik",
-	"collector_fee":5493410,
-	"transportation_type":"Mobil",
-	"distance":543,
-	"travel_frequency":1,
-	"transportation_cost":430102
+  "debtor_nik": 3285167540917312,
+  "debtor_name": "Erik Ten Hag",
+  "debtor_gender": "laki-laki",
+  "debtor_birth_place": "Haaksbergen, 02-02-1970",
+  "debtor_age": 53,
+  "debtor_address": "Gang Setiabudhi No. 8\nTangerang, NT 42062",
+  "debtor_zip": 42062,
+  "debtor_rt": 13,
+  "debtor_rw": 4,
+  "debtor_marital_status": "Menikah",
+  "num_of_dependents": 2,
+  "debtor_education_level": "S2",
+  "debtor_occupation": "Professional",
+  "debtor_company": "Manchester United F.C.",
+  "debtor_number": "+62 (103) 543 9582",
+  "monthly_income": 9812845,
+  "monthly_expense": 3785491,
+  "loan_type": "Pinjaman Bisnis",
+  "debtor_tenor": 18,
+  "loan_amount": 15053912,
+  "payment_history_jan": 0,
+  "payment_history_feb": 0,
+  "payment_history_mar": 1,
+  "payment_history_apr": 2,
+  "payment_history_may": 1,
+  "payment_history_jun": 1,
+  "payment_history_jul": 0,
+  "payment_history_aug": 1,
+  "payment_history_sep": 2,
+  "payment_history_oct": 3,
+  "payment_history_nov": 2,
+  "payment_history_dec": 1,
+  "debtor_aging": "DPK",
+  "transaction_frequency": 11,
+  "remaining_loan": 1589234,
+  "billing_frequency": 1,
+  "billing_type": "Surat",
+  "debtor_response": "Positif",
+  "consumerism_level": "Rendah",
+  "debtor_mode": "Membayar utang",
+  "collector_type": "Komunikasi",
+  "collector_reputation": "Baik",
+  "collector_fee": 5493410,
+  "transportation_type": "Mobil",
+  "distance": 543,
+  "travel_frequency": 1,
+  "transportation_cost": 430102
 }
 ```
+
 - **Example Response** :
+
 ```json
 {
   "status": 200,
@@ -1085,10 +1182,83 @@ Pembuatan model memprediksi  proses penanganan pelanggan yang pernah gagal memba
 }
 ```
 
+### 17.2. Predict Remedial
+
+- **URL** : `/fitur-17/predict-remedial/`
+- **Method** : POST
+- **Request Body** :
+
+```json
+{
+  "debtor_nik": 3285167540917312,
+  "debtor_name": "Harry Maguire",
+  "debtor_gender": "laki-laki",
+  "debtor_birth_place": "Sheffield, 05-03-1993",
+  "debtor_age": 53,
+  "debtor_address": "Gang Setiabudhi No. 8\nTangerang, NT 42062",
+  "debtor_zip": 42062,
+  "debtor_rt": 13,
+  "debtor_rw": 4,
+  "debtor_marital_status": "Menikah",
+  "num_of_dependents": 2,
+  "debtor_education_level": "S2",
+  "debtor_occupation": "Professional",
+  "debtor_company": "Manchester United F.C.",
+  "debtor_number": "+62 (103) 543 9582",
+  "monthly_income": 9812845,
+  "monthly_expense": 3785491,
+  "loan_type": "Pinjaman Bisnis",
+  "debtor_tenor": 18,
+  "loan_amount": 15053912,
+  "payment_history_jan": 0,
+  "payment_history_feb": 0,
+  "payment_history_mar": 1,
+  "payment_history_apr": 2,
+  "payment_history_may": 1,
+  "payment_history_jun": 1,
+  "payment_history_jul": 0,
+  "payment_history_aug": 1,
+  "payment_history_sep": 2,
+  "payment_history_oct": 3,
+  "payment_history_nov": 2,
+  "payment_history_dec": 1,
+  "debtor_aging": "DPK",
+  "transaction_frequency": 11,
+  "remaining_loan": 1589234,
+  "billing_frequency": 1,
+  "billing_type": "Surat",
+  "debtor_response": "Positif",
+  "consumerism_level": "Rendah",
+  "debtor_mode": "Membayar utang",
+  "collector_type": "Komunikasi",
+  "collector_reputation": "Baik",
+  "collector_fee": 5493410,
+  "transportation_type": "Mobil",
+  "distance": 543,
+  "travel_frequency": 1,
+  "transportation_cost": 430102
+}
+```
+
+- **Example Response** :
+
+```json
+{
+  "status": 200,
+  "message": "success",
+  "result": {
+    "remedial_score": 619.3785469289354,
+    "remedial_label": "No remedial"
+  }
+}
+```
+
 ### 18.1. Predict Loss Reverse
+
 - **URL** : `/fitur-18/predict-loss-reverse/`
 - **Method** : POST
 - **Request Body** :
+
 ```json
 {
   "debtor_name": "Alika Januar",
@@ -1143,7 +1313,9 @@ Pembuatan model memprediksi  proses penanganan pelanggan yang pernah gagal memba
   "aging": "Kurang lancar"
 }
 ```
+
 - **Example Response** :
+
 ```json
 {
   "status": 200,
@@ -1154,75 +1326,85 @@ Pembuatan model memprediksi  proses penanganan pelanggan yang pernah gagal memba
   }
 }
 ```
+
 ### 18.2. Predict Time to Collect for Collector
+
 - **URL** : `/predict-time-to-collect/`
 - **Method** : POST
 - **Request Body** :
+
 ```json
 {
-"collector_name": "Sean Strong,Heather Velez",
-"collector_address": "Gang Indragiri No. 194 Tebingtinggi, NT 48385",
-"collector_number": "+62 (575) 348-4217",
-"collector_nik": "8,40804E+15",
-"collector_zip": 48385,
-"collector_rt": 1,
-"collector_rw": 2,
-"collector_birth_place": "Kepulauan Bangka Belitung, 29-05-1978",
-"collector_age": 45,
-"collector_marital_status": "Menikah",
-"collector_gender": "laki-laki",
-"avg_bill_methods": "sms or WA",
-"debtor_volume_handled": 10,
-"bill_amount_collected": 61600000,
-"total_actual": 67200000,
-"total_cost": 72549,
-"success_rate": 92
+  "collector_name": "Sean Strong,Heather Velez",
+  "collector_address": "Gang Indragiri No. 194 Tebingtinggi, NT 48385",
+  "collector_number": "+62 (575) 348-4217",
+  "collector_nik": "8,40804E+15",
+  "collector_zip": 48385,
+  "collector_rt": 1,
+  "collector_rw": 2,
+  "collector_birth_place": "Kepulauan Bangka Belitung, 29-05-1978",
+  "collector_age": 45,
+  "collector_marital_status": "Menikah",
+  "collector_gender": "laki-laki",
+  "avg_bill_methods": "sms or WA",
+  "debtor_volume_handled": 10,
+  "bill_amount_collected": 61600000,
+  "total_actual": 67200000,
+  "total_cost": 72549,
+  "success_rate": 92
 }
 ```
+
 - **Example Response** :
+
 ```json
 {
-    "status": 200,
-    "message": "success",
-    "result": 1
+  "status": 200,
+  "message": "success",
+  "result": 1
 }
 ```
+
 ### 18.3. Predict Total Cost for Collector
+
 - **URL** : `/predict-total-cost/`
 - **Method** : POST
 - **Request Body** :
-```json
-{
-"collector_name": "Sean Strong,Heather Velez",
-"collector_address": "Gang Indragiri No. 194 Tebingtinggi, NT 48385",
-"collector_number": "+62 (575) 348-4217",
-"collector_nik": "8,40804E+15",
-"collector_zip": 48385,
-"collector_rt": 1,
-"collector_rw": 2,
-"collector_birth_place": "Kepulauan Bangka Belitung, 29-05-1978",
-"collector_age": 45,
-"collector_marital_status": "Menikah",
-"collector_gender": "laki-laki",
-"avg_bill_methods": "sms or WA",
-"debtor_volume_handled": 10,
-"bill_amount_collected": 61600000,
-"total_actual": 67200000,
-"success_rate": 92,
-"time_to_collect": 3
-}
 
-```
-- **Example Response** :
 ```json
 {
-    "status": 200,
-    "message": "success",
-    "result": 91050
+  "collector_name": "Sean Strong,Heather Velez",
+  "collector_address": "Gang Indragiri No. 194 Tebingtinggi, NT 48385",
+  "collector_number": "+62 (575) 348-4217",
+  "collector_nik": "8,40804E+15",
+  "collector_zip": 48385,
+  "collector_rt": 1,
+  "collector_rw": 2,
+  "collector_birth_place": "Kepulauan Bangka Belitung, 29-05-1978",
+  "collector_age": 45,
+  "collector_marital_status": "Menikah",
+  "collector_gender": "laki-laki",
+  "avg_bill_methods": "sms or WA",
+  "debtor_volume_handled": 10,
+  "bill_amount_collected": 61600000,
+  "total_actual": 67200000,
+  "success_rate": 92,
+  "time_to_collect": 3
+}
+```
+
+- **Example Response** :
+
+```json
+{
+  "status": 200,
+  "message": "success",
+  "result": 91050
 }
 ```
 
 ## Contributors
+
 A big shout-out and thanks to the amazing individuals who have contributed to this project:
 
 - [ABDUL ROID](https://github.com/abroid)
