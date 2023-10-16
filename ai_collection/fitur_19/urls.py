@@ -1,6 +1,8 @@
 from django.urls import path
-from .views import test
+from .views import DefaultPaymentPrediction, RecomendSupervision
 
 urlpatterns = [
-    path('test/', test, name='test'),
+    path('predict-default-payment/', DefaultPaymentPrediction.as_view(), name='test'),
+    path('recommended-supervision/', RecomendSupervision.as_view(), name='recomended')
+
 ]
