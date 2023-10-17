@@ -1,0 +1,13 @@
+This file contains the example of input example for testing the endpoints
+
+Endpoint: {host}/fitur-13/predict-best-time-to-remind/
+Method: POST
+Input:
+{
+  "debtor_working_time": "Pagi-Siang",
+  "days_since_last_reminder": 5,
+  "debtor_previous_communication_channel": "SMS",
+  "number_of_previous_reminders": 0,
+  "last_interaction_type": true,
+  "reminder_response": true
+}

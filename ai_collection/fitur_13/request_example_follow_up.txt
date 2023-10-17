@@ -1,0 +1,15 @@
+This file contains the example of input example for testing the endpoints
+
+Endpoint: {host}/fitur-13/predict-best-time-to-follow-up/
+Method: POST
+Input:
+{
+  "debtor_working_time": "Pagi-Siang",
+  "debtor_aging": 2,
+  "days_since_last_follow_up": 4,
+  "debtor_previous_communication_channel": "SMS",
+  "debtor_field_communication": true,
+  "number_of_previous_follow_ups": 1,
+  "last_interaction_type": true,
+  "follow_up_response": true
+}
