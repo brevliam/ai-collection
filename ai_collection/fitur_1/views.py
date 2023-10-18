@@ -19,7 +19,7 @@ class PredictDifficultyScore(APIView):
 
             # Prepare the response data
             response_data = {
-                'collection_difficulty_score': score,
+                'collection_difficulty_score': round(score),
                 'collection_difficulty_category': category,
             }
 
