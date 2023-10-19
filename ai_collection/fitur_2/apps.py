@@ -16,7 +16,7 @@ class Fitur2Config(AppConfig):
     debtor_class_by_demography_model_path = os.path.join(os.path.dirname(__file__), 'model', 'debtor_class_by_demography.joblib')
     
     collector_class_by_age_model_path = os.path.join(os.path.dirname(__file__), 'model', 'collector_class_by_age.joblib')
-    collector_class_by_location_model_path = os.path.join(os.path.dirname(__file__), 'model', 'collector_class_by_age.joblib')
+    collector_class_by_location_model_path = os.path.join(os.path.dirname(__file__), 'model', 'collector_class_by_location.joblib')
     collector_class_by_behavior_model_path = os.path.join(os.path.dirname(__file__), 'model', 'collector_class_by_debtor_behavior.joblib')
     collector_class_by_character_model_path = os.path.join(os.path.dirname(__file__), 'model', 'collector_class_by_debtor_character.joblib')
     collector_class_by_collector_field_model_path = os.path.join(os.path.dirname(__file__), 'model', 'collector_class_by_collector_field.joblib')

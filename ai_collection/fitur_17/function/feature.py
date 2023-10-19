@@ -8,7 +8,7 @@ def predict_fraud_score(data):
   DATASET_FILE_NAME = '17_fraud_dummy_data_v01_041023.csv'
 
   input_df = transform_input(data)
-  output = model.predict(input_df)
+  output = round(model.predict(input_df))
   result = transform_fraud_pred_output(output)
 
   utils.append_dataset_with_new_data(DATASET_FILE_NAME, input_df, result)
@@ -20,7 +20,7 @@ def predict_remedial_score(data):
   DATASET_FILE_NAME = '17_remedial_dummy_data_v01_051023.csv'
 
   input_df = transform_input(data)
-  output = model.predict(input_df)
+  output = round(model.predict(input_df))
   result = transform_remedial_pred_output(output)
 
   utils.append_dataset_with_new_data(DATASET_FILE_NAME, input_df, result)
