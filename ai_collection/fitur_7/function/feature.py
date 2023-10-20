@@ -78,11 +78,24 @@ def transform_campaign_rec_output(rec, aging):
     campaign_dict = {0: 'Digital',
                     1: 'Telepon',
                     2: 'Field'}
+    
+    aging = aging[0]
+    
+    if aging == 'Lancar':
+        aging = 'Lancar: Tidak ada tunggakan'
+    elif aging == 'DPK':
+        aging = 'DPK (Dalam Perhatian Khusus): Tunggakan 1-90 hari'
+    elif aging == 'Kurang Lancar':
+        aging = 'Kurang Lancar: Tunggakan 91-120 hari'
+    elif aging == 'Diragukan':
+        aging = 'Diragukan: Tunggakan 121-180 hari'
+    elif aging == 'Macet':
+        aging = 'Macet: Tunggakan lebih dari 180 hari'
 
     campaign_rec = campaign_dict.get(int(rec[0]))
     data = {
         'campaign_recommendation': campaign_rec, 
-        'aging':aging[0]
+        'aging':aging
         }
 
     return data
