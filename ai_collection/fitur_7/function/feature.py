@@ -65,8 +65,10 @@ def transform_workload_pred_output(pred):
     else:
         workload_level = 'normal'
 
+    rounded_workload_score = round(workload_score, 2)
+
     data = {
-        'workload_score': workload_score,
+        'workload_score': rounded_workload_score,
         'workload_level': workload_level
     }
 
