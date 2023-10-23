@@ -1,0 +1,30 @@
+This file contains the example of input example for testing the endpoints
+
+Endpoint: {host}/fitur-16/predict-fraud/
+Method: POST
+Input:
+{
+  "collateral_auction_type": "Perhiasan",
+  "collateral_name": "anting-anting",
+  "collateral_specification": "Anting-anting emas kuning 22K",
+  "collateral_info": "",
+  "collateral_market_price": 5021451.291706661,
+  "invoice_auction_price": 5937424.747468143,
+  "invoice_ttd": True,
+  "invoice_num": 8501.0,
+  "mrent_price": 1985624,
+  "cc_bill": 9438529,
+  "food_cost": 752072,
+  "trans_cost": 445217,
+  "employee_installment_loan": 0,
+  "monthly_income": 27012987,
+  "Bonus_income": 1966830,
+  "salary_reduction": 1991465.558744357,
+  "add_income": 7232615,
+  "dependents_1": 3948994,
+  "dependents_2": 1262379,
+  "dependents_3": 0,
+  "dependents_4": 0,
+  "dependents_5": 2973694,
+  "coworker_report": 2,
+}
