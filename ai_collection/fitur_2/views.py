@@ -24,11 +24,11 @@ class CollectorLabel(APIView):
             return Response({'error': error_message}, status=status.HTTP_400_BAD_REQUEST)
         
 #update build_result       
-def build_result(result):
-    result = {
+def build_result(combined_result):
+    message = {
         "status": 200,
         "message": "success",
-        "result": result
+        "result": combined_result
     }
 
-    return result
+    return message
