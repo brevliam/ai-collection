@@ -385,7 +385,8 @@ python manage.py runserver
     "best_collection_method": "Telepon",
     "best_collector_id": 523,
     "best_collector_name": "Donna Hoover",
-    "best_collector_distance_to_debtor_in_km": 9.597850484422
+    "best_collector_distance_to_debtor_in_km": 9.597850484422,
+    "summary": "Debitur ini sebaiknya ditagih pada waktu pagi, malam dengan metode penagihan by Telepon oleh kolektor dengan ID: 523, nama: Donna Hoover, dan jarak dengan debitur: 9.597850484422 km."
   }
 }
 ```
