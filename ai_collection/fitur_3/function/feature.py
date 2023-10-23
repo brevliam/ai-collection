@@ -15,8 +15,9 @@ def predict_all(data):
     time = predict_best_collection_time(data)
     method = predict_best_collection_method(data)
     collector = predict_best_collector(data, time)
+    summary = summarize_predictions(time, method, collector)
     
-    result = combine_predictions(time, method, collector)
+    result = combine_predictions(time, method, collector, summary)
 
     utils.append_dataset_with_new_data(DATASET_FILE_NAME, data, result)
 
@@ -214,7 +215,24 @@ def transform_output_best_collector(pred, collector_data):
     return recommended_collector_dict
 
 
+# A function to return a summary of all the predictions
+def summarize_predictions(time, method, collector):
+    best_collection_time = time.get('best_collection_time')
+    best_collection_method = method.get('best_collection_method')
+    best_collector_id = collector.get('best_collector_id')
+    best_collector_name = collector.get('best_collector_name')
+    best_collector_distance_to_debtor_in_km = collector.get('best_collector_distance_to_debtor_in_km')
+
+    summary = "Debitur ini sebaiknya ditagih pada waktu {} dengan metode penagihan by {} oleh kolektor dengan ID: {}, nama: {}, dan jarak dengan debitur: {} km.".format(best_collection_time, best_collection_method, best_collector_id, best_collector_name, best_collector_distance_to_debtor_in_km)
+
+    summary_dict = {
+        "summary": summary
+    }
+    
+    return summary_dict
+
+
 # A function to combine all prediction results
-def combine_predictions(best_collection_time, best_collection_method, best_collector):
-    combined_pred = best_collection_time | best_collection_method | best_collector
+def combine_predictions(best_collection_time, best_collection_method, best_collector, summary):
+    combined_pred = best_collection_time | best_collection_method | best_collector | summary
     return combined_pred
