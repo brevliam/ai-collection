@@ -23,6 +23,7 @@ class CollectorLabel(APIView):
             error_message = str(e)
             return Response({'error': error_message}, status=status.HTTP_400_BAD_REQUEST)
         
+#update build_result       
 def build_result(result):
     result = {
         "status": 200,
