@@ -27,7 +27,7 @@ Input:
     "amount_of_late_days": 7,
     "tenure": 24,
     "debtor_latitude": -6.947324,
-    "debtor_longitude": 110.688436
+    "debtor_longitude": 110.688436
 }
 Output:
 {
@@ -38,6 +38,7 @@ Output:
         "best_collection_method": "Telepon",
         "best_collector_id": 523,
         "best_collector_name": "Donna Hoover",
-        "best_collector_distance_to_debtor_in_km": 9.597850484422
+        "best_collector_distance_to_debtor_in_km": 9.597850484422,
+        "summary": "Debitur ini sebaiknya ditagih pada waktu pagi, malam dengan metode penagihan by Telepon oleh kolektor dengan ID: 523, nama: Donna Hoover, dan jarak dengan debitur: 9.597850484422 km."
     }
 }
