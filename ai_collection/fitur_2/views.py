@@ -47,7 +47,7 @@ class CollectorLabel(APIView):
             combined_results = predict_collector_label(request.data)
             return Response(build_result(combined_results.to_dict(orient='records')),
                             status=status.HTTP_200_OK)
-        except RuntimeError as e:
+        except Exception as e:
             error_message = str(e)
             return Response({'error': error_message}, status=status.HTTP_400_BAD_REQUEST)
 

@@ -43,8 +43,7 @@ class PredictDifficultyScore(APIView):
 
                 result = self.build_result(response_data)
                 return Response(result)
-            else:
-                return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
         except RuntimeError as e:
             error_message = str(e)
             return Response({'error': error_message}, status=status.HTTP_400_BAD_REQUEST)
