@@ -4,39 +4,40 @@ Endpoint: {host}/fitur-4/predict-assignment/
 {host}/fitur-4/predict-campaign/
 Method: POST
 Input:
-{"debtor_nik": 4498921163765183,
-            "debtor_name": "Melinda Saefullah",
-            "debtor_gender": "laki-laki",
-            "debtor_birth_place": "Sumatera Barat, 14-07-1997",
-            "debtor_age": 26.0,
-            "debtor_address": "Jalan Medokan Ayu No. 8\nBitung, GO 56210",
-            "debtor_zip": 56210,
-            "debtor_rt": 15.0,
-            "debtor_rw": 17.0,
-            "debtor_marital_status": "Cerai mati",
-            "debtor_occupation": "Pegawai Swasta",
-            "debtor_company": "CV Aryani Tbk",
-            "debtor_number": "+62-194-201-6618",
-            "total_text": 15.0,
-            "total_calls": 8.0,
-            "total_visit": 1.0,
-            "foreclosure": 0.0,
-            "write_off": 0.0,
-            "debtor_location": "Denpasar",
-            "debtor_number_of_dependents": 4.0,
-            "debtor_cars_count": 3.0,
-            "debtor_motorcycle_count": 2.0,
-            "debtor_house_count": 1.0,
-            "debtor_education_level": "S1",
-            "monthly_income": 582758265.0,
-            "debtor_personality": "kalem",
-            "loan_amount": 4406109356.0,
-            "tenor": 12.0,
-            "interest_rate": 9.0,
-            "delay_history": 10.0,
-            "credit_score": 648.0,
-            "action_code": "WRPH",
-            "category_campaign": "Call"}
+{
+ "debtor_nik": 6760812268661006,
+ "debtor_name": "Rosman Prayoga",
+ "debtor_gender": "laki-laki",
+ "debtor_birth_place": "Banten, 08-02-1967",
+ "debtor_age": 56,
+ "debtor_address": "Gang Otto Iskandardinata No. 96\nTanjungbalai, KS 71039",
+ "debtor_zip": 71039,
+ "debtor_rt": 5,
+ "debtor_rw": 10,
+ "debtor_marital_status": "Cerai mati",
+ "debtor_occupation": "Pengusaha",
+ "debtor_company": "PT Permata Tbk",
+ "debtor_number": "+62 (94) 723-3757",
+ "debtor_education_level": "SMP",
+ "debtor_location": "Balikpapan",
+ "debtor_personality": "sedang",
+ "total_text": 3,
+ "total_calls": 2,
+ "total_visit": 2,
+ "foreclosure": 0,
+ "write_off": 0,
+ "delay_history": 13,
+ "arrears_amounts": 3,
+ "credit_score": 553,
+ "debtor_number_of_dependents": 3,
+ "debtor_cars_count": 2,
+ "debtor_motorcycle_count": 2,
+ "debtor_house_count": 1,
+ "monthly_income": 378592452,
+ "loan_amount": 4271112880.5668497,
+ "tenor": 8,
+ "interest_rate": 8
+}
 
 Output campaign prediction:
 {
@@ -45,7 +46,7 @@ Output campaign prediction:
   "result": "Lakukan Telfon"
 }
 
-output assignment prediction:
+Output assignment prediction:
 {
   "status": 200,
   "message": "success",

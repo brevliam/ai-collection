@@ -13,3 +13,17 @@ Input:
   "last_interaction_type": true,
   "follow_up_response": true
 }
+Output:
+{
+  "status": 200,
+  "message": "success",
+  "result": {
+    "best_time_to_follow_up": "Sore",
+    "best_time_to_follow_up_probability": [
+      "Sore : 57.46%",
+      "Malam : 34.17%",
+      "Siang : 4.20%",
+      "Pagi : 4.17%"
+    ]
+  }
+}

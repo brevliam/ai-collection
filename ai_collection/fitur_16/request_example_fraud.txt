@@ -28,3 +28,13 @@ Input:
   "dependents_5": 2973694,
   "coworker_report": 2,
 }
+Output:
+{
+  "status": 200,
+  "message": "success",
+  "result": {
+    "fraud": [
+      "Data mencurigakan dan Karyawan berpotensi melakukan kecurangan"
+    ]
+  }
+}

@@ -299,7 +299,7 @@ def predict_appraisal_score(data):
 def transform_input(data):
     df = create_dataframe(data)
     
-    transformed_df = pipeT(df)
+    transformed_df = pipe(df)
     return transformed_df
 
 def transform_inputT(data):

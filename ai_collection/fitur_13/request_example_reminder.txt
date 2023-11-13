@@ -11,3 +11,17 @@ Input:
   "last_interaction_type": true,
   "reminder_response": true
 }
+Output:
+{
+  "status": 200,
+  "message": "success",
+  "result": {
+    "best_time_to_remind": "Sore",
+    "best_time_to_remind_probability": [
+      "Sore : 93.96%",
+      "Malam : 5.99%",
+      "Siang : 0.04%",
+      "Pagi : 0.01%"
+    ]
+  }
+}

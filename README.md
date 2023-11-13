@@ -115,13 +115,13 @@ python manage.py runserver
 > **Definition:**  
 > Pembuatan model mengotomatisasi dan Merekemondasi proses persetujuan restrukturisasi dalam penagihan, seperti layaknya pemberian kredit baru (Analisa kredit ala AI)
 
-### Fitur 13: AI Reschedule Automation
+### Fitur 13: [AI Reschedule Automation](#131-predict-best-time-to-remind)
 
 > **PIC**: Nur Azkia Rahmah  
 > **Definition:**  
 > Pembuatan Model mengotomatisasi dan mengoptimalkan proses reschedule dalam penagihan, meliputi mekanisme reschedule, mekanisme follow up, auto reminder, modifikasi tenor dan waktu pembayaran, dengan Kecerdasan Artifisial (AI)
 
-### Fitur 16: AI Warehouse Inventory Management, Storing, Selling, Cost Projection, and Fraud Detection
+### Fitur 16: [AI Warehouse Inventory Management, Storing, Selling, Cost Projection, and Fraud Detection](#161-predict-fraud)
 
 > **PIC**: Sintya Tri Wahyu Adityawati  
 > **Definition:**  
@@ -393,7 +393,7 @@ python manage.py runserver
 
 ### 4.1. Predict Campaign
 
-- **URL** : `/fitur-4/predict-assignment/`
+- **URL** : `/fitur-4/predict-campaign/`
 - **Method** : POST
 - **Request Body** :
 
@@ -447,7 +447,7 @@ python manage.py runserver
 
 ### 4.2. Predict Assignment
 
-- **URL** : `/fitur-4/predict-campaign/`
+- **URL** : `/fitur-4/predict-assignment/`
 - **Method** : POST
 - **Request Body** :
 
@@ -688,7 +688,7 @@ python manage.py runserver
 
 ### 7.2. Recommend Campaign
 
-- **URL** : `/fitur-7/recommend-campaign`
+- **URL** : `/fitur-7/recommend-campaign/`
 - **Method** : POST
 - **Request Body** :
 
@@ -1109,6 +1109,282 @@ python manage.py runserver
       "request_loan": 76244999.99999997
     }
   ]
+}
+```
+
+### 13.1. Predict Best Time to Remind
+
+- **URL** : `/fitur-13/predict-best-time-to-remind/`
+- **Method** : POST
+- **Request Body** :
+
+```json
+{
+  "debtor_working_time": "Pagi-Siang",
+  "days_since_last_reminder": 5,
+  "debtor_previous_communication_channel": "SMS",
+  "number_of_previous_reminders": 0,
+  "last_interaction_type": true,
+  "reminder_response": true
+}
+```
+
+- **Example Response** :
+
+```json
+{
+  "status": 200,
+  "message": "success",
+  "result": {
+    "best_time_to_remind": "Sore",
+    "best_time_to_remind_probability": [
+      "Sore : 93.96%",
+      "Malam : 5.99%",
+      "Siang : 0.04%",
+      "Pagi : 0.01%"
+    ]
+  }
+}
+```
+
+### 13.2. Predict Best Time to Follow Up
+
+- **URL** : `/fitur-13/predict-best-time-to-follow-up/`
+- **Method** : POST
+- **Request Body** :
+
+```json
+{
+  "debtor_working_time": "Pagi-Siang",
+  "debtor_aging": 2,
+  "days_since_last_follow_up": 4,
+  "debtor_previous_communication_channel": "SMS",
+  "debtor_field_communication": true,
+  "number_of_previous_follow_ups": 1,
+  "last_interaction_type": true,
+  "follow_up_response": true
+}
+```
+
+- **Example Response** :
+
+```json
+{
+  "status": 200,
+  "message": "success",
+  "result": {
+    "best_time_to_remind": "Sore",
+    "best_time_to_remind_probability": [
+      "Sore : 93.96%",
+      "Malam : 5.99%",
+      "Siang : 0.04%",
+      "Pagi : 0.01%"
+    ]
+  }
+}
+```
+
+### 13.3. Predict Reschedule
+
+- **URL** : `/fitur-13/predict-reschedule/`
+- **Method** : POST
+- **Request Body** :
+
+```json
+{
+  "debtor_name": "Cemplunk Zulaika",
+  "debtor_nik": "4133430000000000",
+  "debtor_address": "Jalan Raya Setiabudhi No. 857 Banjarbaru, KR 12188",
+  "debtor_number": "+62 (102) 776 3467",
+  "debtor_company": "CV Nugroho Melani (Persero) Tbk",
+  "debtor_zip": 12188,
+  "debtor_rt": 6,
+  "debtor_rw": 10,
+  "debtor_birth_place": "Bengkulu, 23-09-1997",
+  "debtor_age": 43,
+  "debtor_gender": "Laki-laki",
+  "debtor_education_level": "S1",
+  "debtor_marital_status": "Cerai Hidup",
+  "debtor_number_of_dependents": 1,
+  "debtor_asset_ownership": 1,
+  "debtor_asset_value": 0,
+  "debtor_occupation": "Pegawai Swasta",
+  "debtor_yearly_income": "103500000",
+  "debtor_yearly_expense": 16037138,
+  "debtor_net_income": 87462861,
+  "debtor_income_frequency": 12,
+  "debtor_loan_amount": 25500000,
+  "debtor_reschedule_history": 2,
+  "debtor_delay_history": 1,
+  "debtor_communication_channel": "Field",
+  "debtor_tenor": 28,
+  "debtor_num_of_paid_months": 20,
+  "debtor_num_of_unpaid_months": 8,
+  "debtor_days_before_due_date": 0,
+  "debtor_aging": "DPK",
+  "debtor_business_prospect_growth_potential": 0,
+  "debtor_business_prospect_market_conditions": 1,
+  "debtor_performance_profitability": 4,
+  "debtor_performance_cash_flow": 0,
+  "debtor_repayment_ability_accuracy": 1,
+  "arrears1": 0,
+  "arrears2": 0,
+  "arrears3": 0,
+  "arrears4": 0,
+  "arrears5": 0,
+  "arrears6": 1,
+  "arrears7": 0,
+  "arrears8": 0,
+  "arrears9": 0,
+  "arrears10": 0,
+  "arrears11": 0,
+  "arrears12": 0
+}
+```
+
+- **Example Response** :
+
+```json
+{
+  "status": 200,
+  "message": "success",
+  "result": {
+    "reschedule_eligibility": "Layak Reschedule Dengan Resiko Sedang"
+  }
+}
+```
+
+### 16.1. Predict Fraud
+
+- **URL** : `/fitur-16/predict-fraud/`
+- **Method** : POST
+- **Request Body** :
+
+```json
+{
+  "collateral_auction_type": "Perhiasan",
+  "collateral_name": "anting-anting",
+  "collateral_specification": "Anting-anting emas kuning 22K",
+  "collateral_info": "",
+  "collateral_market_price": 5021451.291706661,
+  "invoice_auction_price": 5937424.747468143,
+  "invoice_ttd": "True",
+  "invoice_num": 8501.0,
+  "mrent_price": 1985624,
+  "cc_bill": 9438529,
+  "food_cost": 752072,
+  "trans_cost": 445217,
+  "employee_installment_loan": 0,
+  "monthly_income": 27012987,
+  "Bonus_income": 1966830,
+  "salary_reduction": 1991465.558744357,
+  "add_income": 7232615,
+  "dependents_1": 3948994,
+  "dependents_2": 1262379,
+  "dependents_3": 0,
+  "dependents_4": 0,
+  "dependents_5": 2973694,
+  "coworker_report": 2
+}
+```
+
+- **Example Response** :
+
+```json
+{
+  "status": 200,
+  "message": "success",
+  "result": {
+    "fraud": ["Data mencurigakan dan Karyawan berpotensi melakukan kecurangan"]
+  }
+}
+```
+
+### 16.2. Predict Appraisal
+
+- **URL** : `/fitur-16/predict-appraisal/`
+- **Method** : POST
+- **Request Body** :
+
+```json
+{
+  "collateral_name": "HP",
+  "Body": "Bukan kriteria",
+  "paint": "Bukan kriteria",
+  "glass": "Bukan kriteria",
+  "tire": "Bukan kriteria",
+  "mechine": "Bukan kriteria",
+  "transmission": "Bukan kriteria",
+  "suspension": "Bukan kriteria",
+  "brake": "Bukan kriteria",
+  "AC": "Bukan kriteria",
+  "audio": "Bukan kriteria",
+  "power window": "Bukan kriteria",
+  "power steering": "Bukan kriteria",
+  "airbag": "Bukan kriteria",
+  "ABS": "Bukan kriteria",
+  "EBD": "Bukan kriteria",
+  "ESP": "Bukan kriteria",
+  "seat": "Bukan kriteria",
+  "dashboard": "Bukan kriteria",
+  "doortrim": "Bukan kriteria",
+  "carpet": "Bukan kriteria",
+  "interior lights": "Bukan kriteria",
+  "stang": "Bukan kriteria",
+  "screen": "Baik",
+  "frame": "Baik",
+  "Remote control": "Bukan kriteria",
+  "accessories": "Bukan kriteria",
+  "contrast": "Bukan kriteria",
+  "clarity": "Bukan kriteria",
+  "refresh rate speed": "Bukan kriteria",
+  "strength": "Baik",
+  "bass": "Baik",
+  "treble": "Baik",
+  "image color": "Baik",
+  "video color": "Baik",
+  "button": "Bukan kriteria",
+  "port": "Bukan kriteria",
+  "camera": "Bukan kriteria",
+  "operating system": "Bukan kriteria",
+  "processor": "Bukan kriteria",
+  "RAM": "Bukan kriteria",
+  "storage": "Bukan kriteria",
+  "battery": "Bukan kriteria",
+  "connectivity": "Bukan kriteria",
+  "lens": "Bukan kriteria",
+  "viewfinder": "Bukan kriteria",
+  "censor": "Bukan kriteria",
+  "feature": "Bukan kriteria",
+  "Detail": "Bukan kriteria",
+  "resolution": "Bukan kriteria",
+  "frame rate": "Bukan kriteria",
+  "stability": "Bukan kriteria",
+  "Keyboard": "Bukan kriteria",
+  "mouse": "Bukan kriteria",
+  "graphics card": "Bukan kriteria",
+  "webcam": "Bukan kriteria",
+  "mikrofon": "Bukan kriteria",
+  "speaker": "Bukan kriteria",
+  "strap": "Baik",
+  "Connector": "Baik",
+  "cable": "Sangat Kurang",
+  "total score": 42,
+  "Score percentage": 0.88,
+  "Info": "baru",
+  "collateral_market_price": 15996750.0
+}
+```
+
+- **Example Response** :
+
+```json
+{
+  "status": 200,
+  "message": "success",
+  "result": {
+    "collateral_appraisal": 96716171
+  }
 }
 ```
 
