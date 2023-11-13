@@ -1,15 +1,29 @@
-# utils.py
+"""
+Module for data processing, prediction, and saving results to a CSV file.
+"""
 
 import os
 import csv
 
 def save_input_data_to_csv(input_data, collection_difficulty_score, collection_difficulty_category):
+    """
+    Save input data along with collection difficulty score and category to a CSV file.
+
+    Parameters:
+    - input_data (dict): Input data in the form of a dictionary.
+    - collection_difficulty_score (float): Collection difficulty score.
+    - collection_difficulty_category (str): Collection difficulty category.
+
+    Returns:
+    None
+    """
     # Get the directory containing this Python script (libraries/utils.py)
     script_dir = os.path.dirname(os.path.abspath(__file__))
 
     # Define the path to the CSV file
-    csv_file_path = os.path.join(script_dir, '..', 'dataset', 'collection_difficulty_scoring_data.csv')
-    
+    csv_file_path = os.path.join(script_dir, '..',
+                                 'dataset', 'collection_difficulty_scoring_data.csv')
+
     column_names = [
         'debtor_nik', 'debtor_name', 'debtor_gender', 'debtor_birth_place',
         'debtor_age', 'debtor_zip', 'debtor_rt', 'debtor_rw', 'debtor_address',
@@ -26,7 +40,7 @@ def save_input_data_to_csv(input_data, collection_difficulty_score, collection_d
         'aging', 'collection_difficulty_score', 'collection_difficulty_category'
     ]
 
-    with open(csv_file_path, mode='a', newline='') as csv_file:
+    with open(csv_file_path, mode='a', newline='', encoding='utf-8') as csv_file:
         writer = csv.DictWriter(csv_file, fieldnames=column_names)
 
         # Check if the file is empty and write the header if it is
@@ -39,4 +53,3 @@ def save_input_data_to_csv(input_data, collection_difficulty_score, collection_d
             'collection_difficulty_category': collection_difficulty_category
         })
         writer.writerow(input_data)
-
