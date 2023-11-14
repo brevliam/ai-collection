@@ -1,9 +1,9 @@
-from django.apps import AppConfig
 import os
-import joblib
 
-import pandas as pd
+import joblib
+from django.apps import AppConfig
 from keras.models import load_model
+
 
 class Fitur3Config(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
@@ -29,4 +29,3 @@ class Fitur3Config(AppConfig):
 
     best_collector_pipeline_path = os.path.join(os.path.dirname(__file__), 'model', 'best_collector_pipeline.joblib')
     best_collector_pipeline = joblib.load(best_collector_pipeline_path)
-
