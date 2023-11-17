@@ -1,6 +1,6 @@
+import os
 from django.apps import AppConfig
 import joblib
-import os
 
 
 class Fitur17Config(AppConfig):
