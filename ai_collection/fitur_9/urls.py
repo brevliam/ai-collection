@@ -1,6 +1,5 @@
 from django.urls import path
-from .views import KreditRecomendedPrediction #, KreditBendaDefaultSolutionPrediction
-
+from .views import KreditRecommendedPrediction 
 urlpatterns = [
-    path('predict-recomended-solution/kredit-pinjaman', KreditRecomendedPrediction.as_view(), name='default-kredit-pinjaman')  
+    path('predict-recomended-solution/kredit-pinjaman', KreditRecommendedPrediction.as_view(), name='default-kredit-pinjaman')  
 ]

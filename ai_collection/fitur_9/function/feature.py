@@ -8,7 +8,9 @@ from sklearn.base import BaseEstimator, TransformerMixin
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import FunctionTransformer
 import joblib
-
+"""
+    This class calculates the loan income expenses ratio based on monthly payment, monthly income, and monthly expenses.
+"""
 class LoanIncomeExpensesRatioCalculator(BaseEstimator, TransformerMixin):
     def fit(self, X, y=None):
         return self
@@ -17,7 +19,9 @@ class LoanIncomeExpensesRatioCalculator(BaseEstimator, TransformerMixin):
         X['loan_income_expenses_ratio'] = round(X['monthly_payment'] / (X['monthly_income'] - X['monthly_expenses']) * 100, 2)
         return X
 
-
+"""
+    This class calculates the default risk based on the loan income expenses ratio, asset value, and loan amount.
+"""
 class DefaultRiskCalculator(BaseEstimator, TransformerMixin):
     def fit(self, X, y=None):
         return self
@@ -118,8 +122,10 @@ class SESCalculator(BaseEstimator, TransformerMixin):
                 return "Sangat Tinggi"
         else:
             return "Tidak Diketahui"  # Tingkat pendidikan tidak dikenali
-
-
+    
+"""
+    This class performs categorical encoding for various features such as debtor education level, marital status, SES, total capital, default risk, loan purpose, and default potential.
+"""
 class CategoricalEncoder(BaseEstimator, TransformerMixin):
     def __init__(self):
         self.mapping = {
@@ -147,57 +153,6 @@ class CategoricalEncoder(BaseEstimator, TransformerMixin):
     def fit(self, X, y=None):
         return self
 
-#     def transform(self, X):
-#         with pd.option_context('mode.chained_assignment', None):
-#             for column, mapping in self.mapping.items():
-#                 if column in X.columns:
-#                     X[column] = X[column].map(mapping)
-#         return X
-
-
-# class PinjamanPotentialDefaultCalculator(BaseEstimator, TransformerMixin):
-#     def fit(self, X, y=None):
-#         return self
-
-#     def transform(self, X):
-#         X['default_potential'] = X.apply(self.calculate_default_potential, axis=1)
-#         return X
-
-#     def calculate_default_potential(self, row):
-#         if row['default_score'] <= 100:
-#             return 'Sangat Baik'
-#         elif row['default_score'] <= 250:
-#             return 'Baik'
-#         elif row['default_score'] <= 500:
-#             return 'Netral'
-#         elif row['default_score'] <= 700:
-#             return 'Buruk'
-#         elif row['default_score'] <= 850:
-#             return 'Sangat Buruk'
-#         else:
-#             return 'Suspicious'
-        
-# class BendaPotentialDefaultCalculator(BaseEstimator, TransformerMixin):
-#     def fit(self, X, y=None):
-#         return self
-
-#     def transform(self, X):
-#         X['default_potential'] = X.apply(self.calculate_default_potential, axis=1)
-#         return X
-
-#     def calculate_default_potential(self, row):
-#         if row['default_score'] <= 100:
-#             return 'Sangat Baik'
-#         elif row['default_score'] <= 250:
-#             return 'Baik'
-#         elif row['default_score'] <= 550:
-#             return 'Netral'
-#         elif row['default_score'] <= 750:
-#             return 'Buruk'
-#         elif row['default_score'] <= 900:
-#             return 'Sangat Buruk'
-#         else:
-#             return 'Suspicious'
 
 data_transformation_pipeline = Pipeline([
     # ('loan_income_expenses_ratio', LoanIncomeExpensesRatioCalculator()),
@@ -209,15 +164,17 @@ data_transformation_pipeline = Pipeline([
 categorical_preprocessing = Pipeline([
     ('categorical_encoder', CategoricalEncoder()),
 ])
+"""
+    This function predicts the recommended solution based on the input data using a pre-trained model and scaler.
+"""
 
 
-
-def predict_recomendded_solution(data):
+def predict_recommended_solution(data):
     
     default_solution_model = Fitur9Config.default_solution_model
     default_solution_scaler = Fitur9Config.default_solution_scaler
     
-    default_kredit_dataset = "data_user_recomedation.csv"
+    default_kredit_dataset = "data_user_recomedation_v3.csv"
     
     df = transform_input(data)
     
@@ -233,7 +190,9 @@ def predict_recomendded_solution(data):
     
     return data
     
-    
+"""
+    This function transforms the input data into a pandas DataFrame for further processing.
+"""    
     
 def transform_input(data):
   data = {key: [value] for key, value in data.items()}
