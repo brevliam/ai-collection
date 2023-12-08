@@ -4,24 +4,23 @@ Endpoint: {host}/fitur-13/predict-best-time-to-remind/
 Method: POST
 Input:
 {
-  "debtor_working_time": "Pagi-Siang",
+  "debtor_nik": "4133430000000000",
+  "debtor_name": "Cemplunk Zulaika",
+  "debtor_gender": "Laki-laki",
+  "debtor_birth_place": "Bengkulu, 23-09-1997",
+  "debtor_age": 43,
+  "debtor_address": "Jalan Raya Setiabudhi No. 857 Banjarbaru, KR 12188",
+  "debtor_zip": 12188,
+  "debtor_rt": 6,
+  "debtor_rw": 10,
+  "debtor_marital_status": "Cerai Hidup",
+  "debtor_occupation": "Pegawai Swasta",
+  "debtor_company": "CV Nugroho Melani (Persero) Tbk",
+  "debtor_number": "+62 (102) 776 3467",
+  "debtor_working_time": "Pagi-Sore",
   "days_since_last_reminder": 5,
   "debtor_previous_communication_channel": "SMS",
   "number_of_previous_reminders": 0,
   "last_interaction_type": true,
   "reminder_response": true
-}
-Output:
-{
-  "status": 200,
-  "message": "success",
-  "result": {
-    "best_time_to_remind": "Sore",
-    "best_time_to_remind_probability": [
-      "Sore : 93.96%",
-      "Malam : 5.99%",
-      "Siang : 0.04%",
-      "Pagi : 0.01%"
-    ]
-  }
 }

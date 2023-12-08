@@ -4,6 +4,19 @@ Endpoint: {host}/fitur-13/predict-best-time-to-follow-up/
 Method: POST
 Input:
 {
+  "debtor_nik": "4133430000000000",
+  "debtor_name": "Cemplunk Zulaika",
+  "debtor_gender": "Laki-laki",
+  "debtor_birth_place": "Bengkulu, 23-09-1997",
+  "debtor_age": 43,
+  "debtor_address": "Jalan Raya Setiabudhi No. 857 Banjarbaru, KR 12188",
+  "debtor_zip": 12188,
+  "debtor_rt": 6,
+  "debtor_rw": 10,
+  "debtor_marital_status": "Cerai Hidup",
+  "debtor_occupation": "Pegawai Swasta",
+  "debtor_company": "CV Nugroho Melani (Persero) Tbk",
+  "debtor_number": "+62 (102) 776 3467",
   "debtor_working_time": "Pagi-Siang",
   "debtor_aging": 2,
   "days_since_last_follow_up": 4,
@@ -12,18 +25,4 @@ Input:
   "number_of_previous_follow_ups": 1,
   "last_interaction_type": true,
   "follow_up_response": true
-}
-Output:
-{
-  "status": 200,
-  "message": "success",
-  "result": {
-    "best_time_to_follow_up": "Sore",
-    "best_time_to_follow_up_probability": [
-      "Sore : 57.46%",
-      "Malam : 34.17%",
-      "Siang : 4.20%",
-      "Pagi : 4.17%"
-    ]
-  }
 }
