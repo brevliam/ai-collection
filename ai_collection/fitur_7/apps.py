@@ -20,7 +20,7 @@ class Fitur7Config(AppConfig):
     campaign_rec_model_path = os.path.join(
         os.path.dirname(__file__), 
         'model', 
-        'campaign_rec_model_v3_231004.joblib')
+        'campaign_rec_model_v4_231227.joblib')
     campaign_rec_model = joblib.load(campaign_rec_model_path)
 
     field_collector_rec_model = FieldCollectorRecommender()

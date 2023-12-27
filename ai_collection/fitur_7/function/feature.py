@@ -44,7 +44,8 @@ def recommend_campaign(data):
 
     input_df = transform_input(data)
     output = model.predict(input_df)
-    result = transform_campaign_rec_output(output, input_df['aging'])
+    prob = model.predict_proba(input_df)
+    result = transform_campaign_rec_output(output, prob, input_df['aging'])
 
     mod_result = result.copy()
     mod_result.pop('aging', None)
@@ -120,7 +121,7 @@ def transform_workload_pred_output(pred):
 
     return data
 
-def transform_campaign_rec_output(rec, aging):
+def transform_campaign_rec_output(rec, prob, aging):
     """
     Transform campaign recommendation output into a standardized format.
 
@@ -148,9 +149,22 @@ def transform_campaign_rec_output(rec, aging):
     elif aging == 'Macet':
         aging = 'Macet: Tunggakan lebih dari 180 hari'
 
+    prob_rec = prob[0][int(rec[0])]
+    prob_rec = round(prob_rec, 2)
+
     campaign_rec = campaign_dict.get(int(rec[0]))
+    next_campaign = ''
+    if campaign_rec == 'Digital':
+        next_campaign = 'Telepon'
+    elif campaign_rec == 'Telepon':
+        next_campaign = 'Field'
+    else:
+        next_campaign = 'Field'
+
     data = {
-        'campaign_recommendation': campaign_rec, 
+        'campaign_recommendation': campaign_rec,
+        'probability': prob_rec, 
+        'next_campaign': next_campaign,
         'aging': aging
     }
 
