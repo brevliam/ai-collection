@@ -19,7 +19,7 @@ def predict_best_time_to_remind(data):
     dict: Prediction result.
     """
     model = Fitur13Config.best_time_to_remind_model
-    dataset_file_name = 'Reminder_AI_Reschedule_Automation_V04_20231004.xlsx'
+    dataset_file_name = 'Update_Data_Reminder.csv'
     input_df = transform_input_debtor(data)
     preprocessed_df = data_preprocessing_best_time_reminder.fit_transform(input_df)
     output = model.predict(preprocessed_df)
@@ -137,9 +137,28 @@ def transform_best_time_to_remind_pred_output(output, output_proba):
     """
     label_mapping = {0: 'Pagi', 1: 'Siang', 2: 'Sore', 3: 'Malam'}
     best_time_to_remind = label_mapping[output[0]]
+    if best_time_to_remind == label_mapping[0]:
+        reminder_context = (
+            "Waktu yang tepat untuk mengirimkan pesan pengingat adalah pagi hari. Hal ini disebabkan oleh kesibukan yang mungkin dihadapi oleh para nasabah di waktu siang, sore, maupun malam."
+        )
+    elif best_time_to_remind == label_mapping[1]:
+        reminder_context = (
+            "Waktu yang tepat untuk mengirimkan pesan pengingat adalah siang hari. Hal ini disebabkan oleh kesibukan yang mungkin dihadapi oleh para nasabah di waktu pagi, sore, maupun malam."
+        )
+    elif best_time_to_remind == label_mapping[2]:
+        reminder_context = (
+            "Waktu yang tepat untuk mengirimkan pesan pengingat adalah sore hari. Hal ini disebabkan oleh kesibukan yang mungkin dihadapi oleh para nasabah di waktu pagi, siang, maupun sore."
+        )
+    elif best_time_to_remind == label_mapping[3]:
+        reminder_context = (
+            "Waktu yang tepat untuk mengirimkan pesan pengingat adalah malam hari. Hal ini disebabkan oleh kesibukan yang mungkin dihadapi oleh para nasabah di waktu pagi, siang, maupun sore."
+        )
+    else:
+        reminder_context = "Tidak termasuk dalam pertimbangan kategori reschedule."
     best_time_to_remind_proba = rank_best_time_to_remind_output(output_proba, label_mapping)
     result = {
         'best_time_to_remind': best_time_to_remind,
+        'reminder_context': reminder_context,
         'best_time_to_remind_probability': best_time_to_remind_proba
     }
     return result
@@ -306,7 +325,7 @@ class DebtorWorkingTimeReminderTransformer(BaseEstimator, TransformerMixin):
         # Check if the columns already exist and apply transformation
         for column in columns_to_check:
             if column not in df_working_time.columns:
-                df_working_time[column] = df_working_time.apply(getattr(self, f'_check_busy_{column}'), axis=1)
+                df_working_time[column] = df_working_time.apply(getattr(self, f'_check_{column}'), axis=1)
         
         return df_working_time
 

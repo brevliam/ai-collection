@@ -4,23 +4,47 @@ Endpoint: {host}/fitur-13/predict-best-time-to-remind/
 Method: POST
 Input:
 {
-  "debtor_nik": "4133430000000000",
-  "debtor_name": "Cemplunk Zulaika",
+  "debtor_nik": "9937369990430445",
+  "debtor_address": "Jl. Wonoayu No. 68\nSemarang, Riau 98101",
+  "debtor_zip": 98101,
+  "debtor_rt": 2,
+  "debtor_rw": 15,
+  "debtor_number": "+62 (0582) 416 0892",
+  "debtor_age": 22,
   "debtor_gender": "Laki-laki",
-  "debtor_birth_place": "Bengkulu, 23-09-1997",
-  "debtor_age": 43,
-  "debtor_address": "Jalan Raya Setiabudhi No. 857 Banjarbaru, KR 12188",
-  "debtor_zip": 12188,
-  "debtor_rt": 6,
-  "debtor_rw": 10,
-  "debtor_marital_status": "Cerai Hidup",
-  "debtor_occupation": "Pegawai Swasta",
-  "debtor_company": "CV Nugroho Melani (Persero) Tbk",
-  "debtor_number": "+62 (102) 776 3467",
-  "debtor_working_time": "Pagi-Sore",
-  "days_since_last_reminder": 5,
-  "debtor_previous_communication_channel": "SMS",
-  "number_of_previous_reminders": 0,
-  "last_interaction_type": true,
-  "reminder_response": true
+  "debtor_education_level": "SD",
+  "debtor_marital_status": "Kawin",
+  "debtor_number_of_dependents": 1,
+  "debtor_occupation": "Profesional",
+  "payment_history_1": 0,
+  "payment_history_2": 0,
+  "payment_history_3": 0,
+  "payment_history_4": 0,
+  "payment_history_5": 0,
+  "payment_history_6": 0,
+  "payment_history_7": 0,
+  "payment_history_8": 1,
+  "payment_history_9": 0,
+  "payment_history_10": 0,
+  "payment_history_11": 0,
+  "payment_history_12": 0,
+  "debtor_aging": "DPK",
+  "debtor_working_time": "Pagi-Malam",
+  "debtor_previous_communication_channel": "WhatsApp",
+  "days_since_last_reminder": 2,
+  "number_of_previous_reminders": 3,
+  "last_interaction_type": False,
+  "reminder_response": False
 }
+
+Output:
+{
+  "best_time_to_remind": "Siang",
+  "reminder_context": "Waktu yang tepat untuk mengirimkan pesan pengingat adalah siang hari. Hal ini disebabkan oleh kesibukan yang mungkin dihadapi oleh para nasabah di waktu pagi, sore, maupun malam.",
+  "best_time_to_remind_probability": [
+  "Siang : 51.64%",
+  "Sore : 48.07%",
+  "Malam : 0.15%",
+  "Pagi : 0.14%"
+    ]
+  }
