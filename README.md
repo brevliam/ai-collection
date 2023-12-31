@@ -145,6 +145,12 @@ python manage.py runserver
 > **Definition:**  
 > Pembuatan model memprediksi proses penanganan pelanggan yang pernah gagal membayar, dan rekomendasi pengawasannya (siapa, bagaimana, frekuensi, intensitas, informasi apa yang harus dipantau dan dikumpulkan) agar tidak kembali macet.
 
+### Fitur 20: [AI Remedial Analytics & Recommendation](#201-predict-risk-status)
+
+> **PIC**: Sella Septiana  
+> **Definition:**  
+> Pembuatan  model analisis problem penarikan, penyitaan, solusi potensial dan  rekomendasi Langkah kerja dan Batasan waktu, tenaga serta biaya, dalam  proses penyitaan, remedial account macet dan penagihan account write  off account.
+
 ## Endpoints
 
 ### 1.1. Predict Collection Difficulty Score
