@@ -1784,4 +1784,4 @@ A big shout-out and thanks to the amazing individuals who have contributed to th
 - [ROVIANI AMELIA](https://github.com/rovianiameliaa)
 - [SINTYA TRI WAHYU ADITYAWATI](https://github.com/sintya1234)
 - [YOGA FATWANTO](https://github.com/yogafatwanto)
-- [SELLA SEPTIANA](https://github.com/sellaseptiana).
+- [SELLA SEPTIANA](https://github.com/sellaseptiana)
