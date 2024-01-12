@@ -70,14 +70,27 @@ def build_new_row(data, result):
                                     'debtor_gender', 'debtor_birth_place',
                                     'debtor_age', 'debtor_address', 'debtor_zip',
                                     'debtor_rt', 'debtor_rw', 'debtor_marital_status',
-                                    'debtor_occupation', 'debtor_company',
-                                    'debtor_number', 'collection_day_type']]
+                                    'debtor_occupation_group', 'debtor_company',
+                                    'debtor_number', 'debtor_occupation',
+                                    'collection_day_type']]
     # Insert best_collection_time column here
     input_df_second_part = input_df[['loan_amount', 'debtor_education_level',
-                                     'credit_score', 'aging',
-                                     'previous_collection_status',
+                                     'credit_score', 'tenure',
+                                     'payment_history_12',
+                                     'payment_history_11',
+                                     'payment_history_10',
+                                     'payment_history_9',
+                                     'payment_history_8',
+                                     'payment_history_7',
+                                     'payment_history_6',
+                                     'payment_history_5',
+                                     'payment_history_4',
+                                     'payment_history_3',
+                                     'payment_history_2',
+                                     'payment_history_1',
+                                     'aging',
                                      'previous_payment_status',
-                                     'amount_of_late_days', 'tenure']]
+                                     'previous_collection_method']]
     #Insert best_collection_method column here
     input_df_third_part = input_df[['debtor_latitude', 'debtor_longitude']]
 
