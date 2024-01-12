@@ -55,11 +55,11 @@ BEST_COLLECTOR_MODEL = Fitur3Config.best_collector_model
 # Import collector dataset
 MODULE_DIR = os.path.dirname(os.path.abspath(__file__))
 DATASET_DIR = os.path.join(MODULE_DIR, "..", "dataset")
-FILE_PATH_COLLECTOR_DATA = os.path.join(DATASET_DIR, 'transformed_data_collector_ai_collection.csv')
+FILE_PATH_COLLECTOR_DATA = os.path.join(DATASET_DIR, 'transformed_data_collector_ai_collection_strategy_v2.csv')
 COLLECTOR_DF = pd.read_csv(FILE_PATH_COLLECTOR_DATA)
 COLLECTOR_DF = COLLECTOR_DF.rename(columns={'Unnamed: 0': 'collector_id'})
 
-DATASET_FILE_NAME = 'data_debtor_ai_collection_reyhan_v02_20231004.csv'
+DATASET_FILE_NAME = 'data_debtor_ai_collection_strategy_v03_20231229.csv'
 
 
 def predict_all(data):
@@ -115,10 +115,11 @@ def transform_input_best_collection_time(data):
       collection time.
     """
     # Input variables for the model
-    required_columns = ['debtor_occupation', 'collection_day_type']
+    # required_columns = ['debtor_occupation', 'collection_day_type']
 
     # Use a dictionary comprehension to filter keys based on required_columns
-    input_data = {key: [value] for key, value in data.items() if key in required_columns}
+    input_data = {key: [value] for key, value in data.items()}
+
     df = pd.DataFrame(input_data)
 
     # Pipeline
@@ -127,8 +128,8 @@ def transform_input_best_collection_time(data):
     input_df_transformed = pd.DataFrame(pipeline.transform(df).toarray(),
                                         columns=pipeline.get_feature_names_out())
     selected_input_df_transformed = input_df_transformed[['cat__collection_day_type_Hari kerja',
-                                                          'cat__debtor_occupation_Buruh',
-                                                          'cat__debtor_occupation_Pegawai Negeri']]
+                                                          'cat__debtor_occupation_group_Buruh',
+                                                          'cat__debtor_occupation_group_Pengusaha']]
 
     return selected_input_df_transformed
 
@@ -186,12 +187,12 @@ def transform_input_best_collection_method(data):
     - pd.DataFrame: Transformed input data ready for predicting the best collection method.
     """
     # Input variables for the model
-    required_columns = ['aging', 'previous_collection_status',
-                        'previous_payment_status',
-                        'amount_of_late_days']
+    # required_columns = ['aging', 'previous_collection_status',
+    #                    'previous_payment_status',
+    #                   'amount_of_late_days']
 
     # Use a dictionary comprehension to filter keys based on required_columns
-    input_data = {key: [value] for key, value in data.items() if key in required_columns}
+    input_data = {key: [value] for key, value in data.items()}
     df = pd.DataFrame(input_data)
 
     # Pipeline
@@ -267,8 +268,8 @@ def predict_best_collector(data, best_collection_time):
                                     right_on="collector_id")
     dt_interact = dt_interact.iloc[:, :-3]
 
-    xdebt = dt_interact.iloc[:,3:19].values
-    xcoll = dt_interact.iloc[:,19:].values
+    xdebt = dt_interact.iloc[:,3:22].values
+    xcoll = dt_interact.iloc[:,22:].values
 
     # calculate distance between debtor and collectors
     lat_debtor = data.get('debtor_latitude')
