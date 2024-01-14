@@ -11,6 +11,7 @@ from sklearn.impute import SimpleImputer
 from sklearn.pipeline import Pipeline
 from sklearn.base import BaseEstimator, TransformerMixin
 from sklearn.preprocessing import LabelEncoder
+from sklearn.compose import ColumnTransformer
 
 
 
@@ -54,37 +55,54 @@ class OutlierMean(BaseEstimator, TransformerMixin):
   
 #Menginput dan menggunakan scaler untuk kolom numerik
 
-class FeatureScaling(BaseEstimator, TransformerMixin):
-  def fit(self, df, y=None): 
-   return self
+# class FeatureScaling(BaseEstimator, TransformerMixin):
+#   def fit(self, df, y=None): 
+#    return self
 
-  def transform(self, df):
-    numeric_columns = ['collateral_market_price', 'invoice_auction_price', 'mrent_price', 'cc_bill', 'food_cost', 'trans_cost', 'employee_installment_loan', 'monthly_income', 'salary_reduction', 'Bonus_income', 'salary_reduction', 'dependents_1', 'dependents_2', 'dependents_3', 'dependents_4', 'dependents_5', 'coworker_report']
-    imputer = SimpleImputer(strategy="mean")
-    df[numeric_columns] = imputer.fit_transform(df[numeric_columns])
+#   def transform(self, df):
+#     numeric_columns = ['add_income', 'collateral_market_price', 'invoice_auction_price', 'mrent_price', 'cc_bill', 'food_cost', 'trans_cost', 'employee_installment_loan', 'monthly_income', 'salary_reduction', 'Bonus_income', 'salary_reduction', 'dependents_1', 'dependents_2', 'dependents_3', 'dependents_4', 'dependents_5', 'coworker_report']
+#     imputer = SimpleImputer(strategy="mean")
+#     df[numeric_columns] = imputer.fit_transform(df[numeric_columns])
 
-#
-    scaler = StandardScaler()
-    df[numeric_columns] = scaler.fit_transform(df[numeric_columns])
+# #
+#     scaler = StandardScaler()
+#     df[numeric_columns] = scaler.fit_transform(df[numeric_columns])
 
-    return df 
+#     return df 
+  
+# class FeatureScaling(BaseEstimator, TransformerMixin):
+#   def fit(self, X, y=None): 
+#     return self
 
-# X['invoice_num'] = ~X['invoice_num'].isnull()
-# X['invoice_num']
+#   def transform(self, X):
+    
+#     numeric_columns = ['add_income', 'collateral_market_price', 'invoice_auction_price', 'mrent_price', 'cc_bill', 'food_cost', 'trans_cost', 'employee_installment_loan', 'monthly_income', 'salary_reduction', 'Bonus_income', 'salary_reduction', 'dependents_1', 'dependents_2', 'dependents_3', 'dependents_4', 'dependents_5', 'coworker_report']
+#     imputer = SimpleImputer(strategy="mean")
+#     X[numeric_columns] = imputer.fit_transform(X[numeric_columns])
+#     scaler = StandardScaler()
+#     X[numeric_columns] = scaler.fit_transform(X[numeric_columns])
+    
+#     return X
+  
 
 
-# class changetoCategorical(BaseEstimator, TransformerMixin):
-#     def fit(self, df, y=None):
-#         return self
+  
+  # X['invoice_num'] = ~X['invoice_num'].isnull()
+  # X['invoice_num']
 
-#     def transform(self, df):
-#       #Mengubah invoice num menjadi boolean
-#        df['invoice_num'] = ~df['invoice_num'].isnull()
-#      #Mengubah invoice num dan invoice ttd menjadi category
-#       #  df['invoice_ttd'] = df['invoice_ttd'].astype('category')
-#       #  df['invoice_num'] = df['invoice_num'].astype('category')
 
-#        return df
+class changetoCategorical(BaseEstimator, TransformerMixin):
+    def fit(self, df, y=None):
+        return self
+
+    def transform(self, df):
+      #Mengubah invoice num menjadi boolean
+       df['invoice_num'] = ~df['invoice_num'].isnull()
+     #Mengubah invoice num dan invoice ttd menjadi category
+      #  df['invoice_ttd'] = df['invoice_ttd'].astype('category')
+      #  df['invoice_num'] = df['invoice_num'].astype('category')
+
+       return df
     
 class FeatureEncoder(BaseEstimator, TransformerMixin):
     def fit(self, df, y=None):
@@ -92,14 +110,6 @@ class FeatureEncoder(BaseEstimator, TransformerMixin):
 
     def transform(self, df):
       
-        # categorical_columns = ["invoice_ttd", "invoice_num"]
-        # imputer = SimpleImputer(strategy="most_frequent")
-        # df[categorical_columns] = imputer.fit_transform(df[categorical_columns])
-
-        # # Melakukan one-hot encoding pada kolom kategori
-        # encoder = OneHotEncoder(handle_unknown='ignore', sparse=False)
-        # encoded_data = encoder.fit_transform(df[categorical_columns])
-        # encoded_df = pd.DataFrame(encoded_data, columns=encoder.get_feature_names_out(categorical_columns))
 
       if "True" in df['invoice_ttd']:
         df['invoice_ttd_0.0'] = 0
@@ -109,27 +119,11 @@ class FeatureEncoder(BaseEstimator, TransformerMixin):
         df['invoice_ttd_1.0'] = 0
 
 
-      # if df['invoice_num'].isnull():
-      #   df['invoice_num_0.0'] = 1
-      #   df['invoice_num_1.0'] = 0
-      # else: 
-      #   df['invoice_num_0.0'] = 0
-      #   df['invoice_num_1.0'] = 1
 
       # Membuat kolom baru 'invoice_num_1.0' dengan nilai 1 jika 'invoice_num' tidak null, 0 jika null
       df['invoice_num_1.0'] = df['invoice_num'].notna().astype(int)
         # Membuat kolom baru 'invoice_num_0.0' dengan nilai 1 jika 'invoice_num' null, 0 jika tidak null
       df['invoice_num_0.0'] = df['invoice_num'].isna().astype(int)
-
-
-
-      
-      #  df['invoice_ttd_0.0'] = (df['invoice_ttd'] == False).astype(int)
-      #  df['invoice_ttd_1.0'] = (df['invoice_ttd'] == True).astype(int)
-
-      #  df['invoice_ttd_0.0'] = (df['invoice_num'] == False).astype(int)
-      #  df['invoice_ttd_1.0'] = (df['invoice_num'] == True).astype(int)
-
       
         # Hapus kolom 'invoice_ttd' dan 'invoice_num' jika perlu
       df = df.drop(['invoice_ttd', 'invoice_num'], axis=1)
@@ -172,62 +166,25 @@ class changetoCategoricalT(BaseEstimator, TransformerMixin):
 
     return df
 
-class OutlierMeanT(BaseEstimator, TransformerMixin):
-  def fit(self, df, y=None): 
-   return self
-
-  def transform(self, df):
-
-    #invoice  market price
-    mean_valuesp = df['Score percentage'].mean()
-    lower_limitsp = df['Score percentage'].quantile(0.05)
-    upper_limitsp = df['Score percentage'].quantile(0.95)
-    
-    df['Score percentage'] =df['Score percentage'].apply(lambda x: mean_valuesp if x < lower_limitsp or x > upper_limitsp else x)
-    # df = df[(df['invoice_auction_price'] > lower_limitMP) & (df['invoice_auction_price'] < upper_limitMP)]
-    
-
-
-    mean_valuemp = df['collateral_market_price'].mean()
-    lower_limitmp = df['collateral_market_price'].quantile(0.05)
-    upper_limitmp = df['collateral_market_price'].quantile(0.95)
-
-    df['collateral_market_price'] = df['collateral_market_price'].apply(lambda x: mean_valuemp if x < lower_limitmp or x > upper_limitmp else x)
-
-    return df
-  
-class FeatureScalingT(BaseEstimator, TransformerMixin):
-  def fit(self, df, y=None): 
-   return self
-
-  def transform(self, df):
-    numeric_columns = ['total score', 'Score percentage', 'collateral_market_price']
-    imputer = SimpleImputer(strategy="mean")
-    df[numeric_columns] = imputer.fit_transform(df[numeric_columns])
-
-#
-    scaler = StandardScaler()
-    df[numeric_columns] = scaler.fit_transform(df[numeric_columns])
-
-    return df
 
 class changetoCategoricalT(BaseEstimator, TransformerMixin):
-    def fit(self, df, y=None):
-        return self
+  def fit(self, df, y=None):
+    return self
 
-    def transform(self, df):
+  def transform(self, df):
     
      #Mengubah invoice num dan invoice ttd menjadi category
 
-      df[categorical_columns] = df[categorical_columns].astype('category')
-      
-      return df
+    df[categorical_columns] = df[categorical_columns].astype('category')
+
+    return df
+
     
 
 
 class FeatureEncoderT(BaseEstimator, TransformerMixin):
     def fit(self, df, y=None):
-        return self
+       return self
 
     def transform(self, df):
       
@@ -236,7 +193,7 @@ class FeatureEncoderT(BaseEstimator, TransformerMixin):
 
         # Melakukan label t encoding pada kolom kategori
 
-        label_encoders = {}
+        # label_encoders = {}
         for col in categorical_columns:
           le = LabelEncoder()
           df[col] = le.fit_transform(df[col])
@@ -247,8 +204,8 @@ def pipeT(df):
    pipeline = Pipeline([
       ("droper", CollT()),
       ("changetoCategorical", changetoCategoricalT()),
-      ("handlingoutlier", OutlierMeanT()),
-      ("Scaling", FeatureScalingT()),
+      # ("handlingoutlier", OutlierMeanT()),
+      # ("Scaling", FeatureScalingT()),
       ("encoder", FeatureEncoderT()) 
 ])
    transform_data = pipeline.fit_transform(df)
@@ -264,23 +221,29 @@ def pipe(df):
    pipeline = Pipeline([
     ("droper", Coll()), 
     ("handlingoutlier", OutlierMean()),
-    ("Scaling", FeatureScaling()),
-    # ("changetoCategorical", changetoCategorical()),
+    # ("Scaling", FeatureScaling()),
+    ("changetoCategorical", changetoCategorical()),
     ("encoder", FeatureEncoder()) 
 ])
    
    transform_data = pipeline.fit_transform(df)  
    return transform_data
 
+def input_df(data):
+    df = create_dataframe(data)
+    
+    # transformed_df = pipe(df)
+    return df
 
 def predict_fraud_category(data):
     model = Fitur16Config.fraud_prediction_model
     DATASET_FILE_NAME = 'data_Fraud.csv'
     
-    input_df = transform_input(data)
-    output = model.predict(input_df)
+    input_d =  input_df(data)
+    trans_in = transform_input(data)
+    output = model.predict(trans_in)
     result = transform_fraud_pred_output(output)
-    utils.append_dataset_with_new_data(DATASET_FILE_NAME, input_df, result)
+    utils.append_dataset_with_new_data(DATASET_FILE_NAME, input_d, result)
   
     return result
 
@@ -289,10 +252,11 @@ def predict_appraisal_score(data):
     
     DATASET_FILE_NAME = 'collateral_appraisal.csv'
     
-    input_df = transform_inputT(data)
-    output = model.predict(input_df)
+    input_d =  input_df(data)
+    trans_in = transform_inputT(data)
+    output = model.predict(trans_in)
     result = transform_collateral_pred_output(output)
-    utils.append_dataset_with_new_data(DATASET_FILE_NAME, input_df, result)
+    utils.append_dataset_with_new_data(DATASET_FILE_NAME, input_d, result)
   
     return result
 
