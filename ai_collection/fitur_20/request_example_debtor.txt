@@ -1,0 +1,55 @@
+This file contains the example of input example for testing the endpoints
+
+Endpoint: {host}/fitur-20/debtorlabel/
+Method: POST
+Input:
+{
+  "debtor_age": 44,
+  "debtor_gender":"Laki-laki",
+  "debtor_education_level":"S1",
+  "debtor_marital_statuds": "Kawin",
+  "debtor_number_of_dependents": 2,
+  "debtor_asset_ownership": "TRUE",
+  "debtor_asset_value": 100000000,
+  "debtor_occupation": "Pegawai Negeri",
+  "debtor_yearly_income": 5000000,
+  "debtor_yearly_expense": 3000000, 
+  "debtor_net_income": 4500000,
+  "debtor_income_frequency":12,
+  "debtor_loan_amount":200000, 
+  "debtor_reschedule_history":12, 
+  "debtor_delay_history":2, 
+  "debtor_communication_channel": "Telepon",
+  "debtor_tenor":8, 
+  "debtor_num_of_paid_months":12, 
+  "debtor_num_of_unpaid_months":3, 
+  "debtor_days_before_due_date":7, 
+  "debtor_business_prospect_growth_potential": "FALSE",
+  "debtor_business_prospect_market_conditions":2,
+  "debtor_performance_profitability":1,
+  "debtor_performance_cash_flow": "TRUE",
+  "debtor_repayment_ability_accuracy": "FALSE",
+  "jan": 0,
+  "feb": 1,
+  "mar": 0,
+  "apr": 0,
+  "may": 1,
+  "jun": 1,
+  "jul": 0,
+  "august": 0,
+  "sept": 1,
+  "oct": 2,
+  "nov": 3,
+  "des": 0,
+  "debtor_aging": "DPK"
+}
+}Output:
+{
+  "status": 200,
+  "message": "success",
+  "result": {
+    "debtor_risk_status": [
+      ""
+    ]
+  }
+}
